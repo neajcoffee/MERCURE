@@ -1,0 +1,180 @@
+/* ---------------------------------------------------------------------------
+   _typography.css (Admin Layout)
+   Gestion de la typographie responsive
+   ---------------------------------------------------------------------------
+   Auteur       : Votre Nom
+   Date         : 2025-02-06
+   Description  : Ce fichier définit la typographie (polices, tailles, interlignes)
+                  spécifiquement pour le layout admin en utilisant des variables CSS
+                  et des points de rupture pour la responsivité.
+   --------------------------------------------------------------------------- */
+
+/* Variables de base */
+html {
+  --font-family-base: 'Inter', Arial, sans-serif;
+  /* --font-family-heading: 'League Spartan', 'Passion One', 'Inter', Arial, sans-serif; */
+  --font-family-heading: 'Inter', Arial, sans-serif;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.9rem;
+
+  --font-size-md: 1.1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.4rem;
+  --font-size-xxl: 1.8rem;
+
+  --line-height-xs: 1.2;
+  --line-height-sm: 1.35;
+  --line-height-md: 1.5;
+  --line-height-lg: 1.2;
+
+  --font-weight-thin: 100;
+  --font-weight-extralight: 200;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+}
+
+/* Responsive : ajustement des tailles sur les grands écrans */
+@media (min-width: 768px) {
+  html {
+    --font-size-md: 1.0625rem;
+    --font-size-lg: 1.375rem;
+    --font-size-xl: 1.75rem;
+    --font-size-xxl: 2.25rem;
+  }
+}
+
+/* Application des variables */
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-md);
+  color: #222;
+  background: #f9f9f9;
+  font-weight: var(--font-weight-regular);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Titres */
+h1,
+.h1 {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-lg);
+  /* margin-bottom: 0.5em; */
+  color: #1a202c;
+}
+h2,
+.h2 {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-lg);
+  /* margin-bottom: var(--spacing-xs); */
+  color: #2d3748;
+}
+h3,
+.h3 {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-lg);
+  /* margin-bottom: var(--spacing-xs); */
+  color: #2d3748;
+}
+h4,
+.h4 {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  /* margin-bottom: var(--spacing-xs); */
+}
+h5,
+.h5 {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+h6,
+.h6 {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Texte courant */
+p,
+.text {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-md);
+  /* margin-bottom: var(--spacing-xs); */
+  color: #4b5563;
+}
+
+/* Petits textes */
+.small,
+small {
+  font-size: var(--font-size-sm);
+  color: #666;
+}
+
+/* Liens */
+a {
+  color: #3182ce;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: #205080;
+  text-decoration: underline;
+}
+
+/* Gras et emphase */
+strong,
+b {
+  font-weight: var(--font-weight-bold);
+}
+em,
+i {
+  font-style: italic;
+}
+
+/* Listes */
+ul,
+ol {
+  margin-left: 1.5em;
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Code */
+code,
+pre {
+  font-family: "Fira Mono", "Consolas", monospace;
+  font-size: var(--font-size-sm);
+  background: #f4f4f4;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+/* Classes utilitaires */
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-muted {
+  color: #888;
+}
+.text-bold {
+  font-weight: var(--font-weight-bold);
+}
+.text-uppercase {
+  text-transform: uppercase;
+}

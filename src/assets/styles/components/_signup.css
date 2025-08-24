@@ -1,0 +1,629 @@
+/* ========================================
+   _signup.css - Styles pour les composants d'inscription
+   ======================================== */
+
+/* Variables spécifiques au signup */
+:root {
+  --signup-primary: #1B3E3E;
+  --signup-primary-hover: #274847;
+  --signup-success: #10B981;
+  --signup-error: #EF4444;
+  --signup-warning: #F59E0B;
+  --signup-gray-50: #F9FAFB;
+  --signup-gray-100: #F3F4F6;
+  --signup-gray-200: #E5E7EB;
+  --signup-gray-300: #D1D5DB;
+  --signup-gray-400: #9CA3AF;
+  --signup-gray-500: #6B7280;
+  --signup-gray-600: #4B5563;
+  --signup-gray-700: #374151;
+  --signup-gray-900: #111827;
+  --signup-white: #FFFFFF;
+  
+  /* Ombres */
+  --signup-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --signup-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --signup-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* ========================================
+   Layout et conteneurs
+   ======================================== */
+
+/* Conteneur principal plein écran */
+.signup-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--signup-gray-50) 0%, var(--signup-white) 50%, var(--signup-gray-50) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
+
+@media (min-width: 640px) {
+  .signup-container {
+    padding: 3rem 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .signup-container {
+    padding: 3rem 2rem;
+  }
+}
+
+/* Conteneur du formulaire */
+.signup-form-container {
+  max-width: 28rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Carte blanche */
+.signup-card {
+  background-color: var(--signup-white);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--signup-shadow-xl);
+  border: 1px solid var(--signup-gray-200);
+}
+
+/* ========================================
+   Typographie
+   ======================================== */
+
+.signup-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--signup-primary);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.signup-subtitle {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--signup-gray-900);
+  text-align: center;
+  margin: 0;
+}
+
+.signup-description {
+  margin-top: 0.5rem;
+  color: var(--signup-gray-600);
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.signup-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--signup-gray-700);
+  margin-bottom: 0.5rem;
+}
+
+.signup-error-text {
+  font-size: 0.75rem;
+  color: var(--signup-error);
+  margin-top: 0.25rem;
+}
+
+/* ========================================
+   Formulaires et inputs
+   ======================================== */
+
+.signup-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--signup-gray-300);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: var(--signup-gray-900);
+  background-color: var(--signup-white);
+  transition: all 0.15s ease-in-out;
+}
+
+.signup-input:focus {
+  outline: none;
+  border-color: var(--signup-primary);
+  box-shadow: 0 0 0 3px rgba(27, 62, 62, 0.1);
+}
+
+.signup-input--error {
+  border-color: var(--signup-error);
+}
+
+.signup-input::placeholder {
+  color: var(--signup-gray-400);
+}
+
+.signup-select {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--signup-gray-300);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: var(--signup-gray-900);
+  background-color: var(--signup-white);
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+}
+
+.signup-select:focus {
+  outline: none;
+  border-color: var(--signup-primary);
+  box-shadow: 0 0 0 3px rgba(27, 62, 62, 0.1);
+}
+
+/* ========================================
+   Boutons
+   ======================================== */
+
+.signup-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  text-decoration: none;
+  min-height: 2.75rem;
+}
+
+.signup-btn--primary {
+  background-color: var(--signup-primary);
+  color: var(--signup-white);
+}
+
+.signup-btn--primary:hover:not(:disabled) {
+  background-color: var(--signup-primary-hover);
+}
+
+.signup-btn--secondary {
+  background-color: var(--signup-gray-100);
+  color: var(--signup-gray-700);
+}
+
+.signup-btn--secondary:hover:not(:disabled) {
+  background-color: var(--signup-gray-200);
+}
+
+.signup-btn--full {
+  width: 100%;
+}
+
+.signup-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ========================================
+   Messages et alertes
+   ======================================== */
+
+.signup-alert {
+  padding: 1rem;
+  border-radius: 0.375rem;
+  margin-bottom: 1.5rem;
+}
+
+.signup-alert--error {
+  background-color: #FEF2F2;
+  border: 1px solid #FECACA;
+  color: var(--signup-error);
+}
+
+.signup-alert--success {
+  background-color: #F0FDF4;
+  border: 1px solid #BBF7D0;
+  color: var(--signup-success);
+}
+
+.signup-alert p {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+/* ========================================
+   Messages de succès
+   ======================================== */
+
+.signup-success-container {
+  background-color: var(--signup-white);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--signup-shadow-xl);
+  border: 1px solid var(--signup-gray-200);
+  text-align: center;
+}
+
+.signup-success-icon {
+  color: var(--signup-success);
+  margin-bottom: 1rem;
+}
+
+.signup-success-icon svg {
+  margin: 0 auto;
+  height: 3rem;
+  width: 3rem;
+}
+
+.signup-success-title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--signup-gray-900);
+  margin-bottom: 0.5rem;
+}
+
+.signup-success-text {
+  color: var(--signup-gray-600);
+  margin: 0;
+}
+
+/* ========================================
+   Espacement et layout
+   ======================================== */
+
+.signup-space-y-6 > * + * {
+  margin-top: 1.5rem;
+}
+
+.signup-space-y-4 > * + * {
+  margin-top: 1rem;
+}
+
+.signup-space-y-2 > * + * {
+  margin-top: 0.5rem;
+}
+
+.signup-flex {
+  display: flex;
+}
+
+.signup-flex-col {
+  flex-direction: column;
+}
+
+.signup-items-center {
+  align-items: center;
+}
+
+.signup-justify-center {
+  justify-content: center;
+}
+
+.signup-justify-between {
+  justify-content: space-between;
+}
+
+.signup-gap-4 {
+  gap: 1rem;
+}
+
+.signup-text-center {
+  text-align: center;
+}
+
+.signup-w-full {
+  width: 100%;
+}
+
+/* ========================================
+   Utilitaires responsive
+   ======================================== */
+
+@media (max-width: 640px) {
+  .signup-container {
+    padding: 1.5rem 1rem;
+  }
+  
+  .signup-card {
+    padding: 1.5rem;
+  }
+  
+  .signup-title,
+  .signup-subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+/* ========================================
+   Animation de chargement
+   ======================================== */
+
+.signup-spinner {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: signup-spin 1s linear infinite;
+}
+
+@keyframes signup-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ========================================
+   Checkbox personnalisé
+   ======================================== */
+
+.signup-checkbox {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.signup-checkbox input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.signup-checkbox-label {
+  font-size: 0.875rem;
+  color: var(--signup-gray-700);
+  cursor: pointer;
+}
+
+.signup-checkbox-label a {
+  color: var(--signup-primary);
+  text-decoration: underline;
+}
+
+.signup-checkbox-label a:hover {
+  color: var(--signup-primary-hover);
+}
+
+/* ========================================
+   StepIndicator - Indicateur d'étapes
+   ======================================== */
+
+.step-indicator {
+  margin-bottom: 2rem;
+}
+
+.step-indicator-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.step-indicator-item {
+  display: flex;
+  align-items: center;
+}
+
+.step-indicator-circle {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.15s ease-in-out;
+}
+
+.step-indicator-circle--active {
+  background-color: var(--signup-primary);
+  color: var(--signup-white);
+}
+
+.step-indicator-circle--inactive {
+  background-color: var(--signup-gray-200);
+  color: var(--signup-gray-500);
+}
+
+.step-indicator-circle svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.step-indicator-line {
+  width: 4rem;
+  height: 0.25rem;
+  margin: 0 0.5rem;
+  transition: all 0.15s ease-in-out;
+}
+
+.step-indicator-line--active {
+  background-color: var(--signup-primary);
+}
+
+.step-indicator-line--inactive {
+  background-color: var(--signup-gray-200);
+}
+
+.step-indicator-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--signup-gray-500);
+  margin-top: 0.5rem;
+}
+
+.step-indicator-label {
+  transition: all 0.15s ease-in-out;
+}
+
+.step-indicator-label--active {
+  color: var(--signup-primary);
+  font-weight: 500;
+}
+
+.step-indicator-label--inactive {
+  color: var(--signup-gray-500);
+}
+
+/* ========================================
+   EstablishmentSearch - Recherche d'établissement
+   ======================================== */
+
+.establishment-search {
+  position: relative;
+}
+
+.establishment-search-input-container {
+  position: relative;
+}
+
+.establishment-search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--signup-gray-400);
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.establishment-search-input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  border: 1px solid var(--signup-gray-300);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: var(--signup-gray-900);
+  background-color: var(--signup-white);
+  transition: all 0.15s ease-in-out;
+}
+
+.establishment-search-input:focus {
+  outline: none;
+  border-color: var(--signup-primary);
+  box-shadow: 0 0 0 3px rgba(27, 62, 62, 0.1);
+}
+
+.establishment-search-info {
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  background-color: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  border-radius: 0.5rem;
+}
+
+.establishment-search-info p {
+  font-size: 0.875rem;
+  color: #1E40AF;
+  margin: 0;
+}
+
+.establishment-search-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--signup-white);
+  border: 1px solid var(--signup-gray-200);
+  border-radius: 0.5rem;
+  box-shadow: var(--signup-shadow-lg);
+  z-index: 50;
+  max-height: 20rem;
+  overflow-y: auto;
+}
+
+.establishment-search-loading {
+  padding: 1rem;
+  text-align: center;
+  color: var(--signup-gray-500);
+}
+
+.establishment-search-loading-spinner {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid transparent;
+  border-top: 2px solid var(--signup-primary);
+  border-radius: 50%;
+  animation: signup-spin 1s linear infinite;
+  margin: 0 auto 0.5rem;
+}
+
+.establishment-search-error {
+  padding: 1rem;
+  text-align: center;
+  color: var(--signup-error);
+}
+
+.establishment-search-item {
+  width: 100%;
+  padding: 0.75rem;
+  text-align: left;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--signup-gray-100);
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.establishment-search-item:last-child {
+  border-bottom: none;
+}
+
+.establishment-search-item:hover {
+  background-color: var(--signup-gray-50);
+}
+
+.establishment-search-item-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.establishment-search-item-icon {
+  color: var(--signup-gray-400);
+}
+
+.establishment-search-item-icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.establishment-search-item-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.establishment-search-item-name {
+  font-weight: 600;
+  color: var(--signup-gray-900);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+.establishment-search-item-address {
+  font-size: 0.875rem;
+  color: var(--signup-gray-600);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+.establishment-search-attribution {
+  padding: 0.75rem;
+  font-size: 0.75rem;
+  color: var(--signup-gray-500);
+  text-align: center;
+  border-top: 1px solid var(--signup-gray-100);
+}
+
+.establishment-search-no-results {
+  padding: 1rem;
+  text-align: center;
+  color: var(--signup-gray-500);
+} 

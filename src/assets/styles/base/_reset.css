@@ -1,0 +1,267 @@
+/* ========================================
+   RESET CSS - Base propre et cohérente
+   ======================================== */
+
+/* 1. Réinitialisation des styles de base pour tous les éléments */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+/* 2. Correction des éléments HTML5 pour les anciens navigateurs */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+/* 3. Réglages de la mise en page et de la typographie */
+html {
+  -webkit-text-size-adjust: 100%;  /* Empêche l'agrandissement automatique sur iOS */
+  -moz-tab-size: 4;
+  tab-size: 4;
+  font-size: 100%;
+  line-height: 1.5;
+  scroll-behavior: smooth; /* Ajoute un défilement fluide */
+}
+
+/* 4. Paramètres de base pour le corps du document */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
+               "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 5. Suppression des marges pour les titres et paragraphes */
+h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, figure {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+/* 6. Réinitialisation des styles de liens */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover, a:focus {
+  text-decoration: underline;
+}
+
+/* 7. Suppression des styles de listes par défaut */
+ol, ul {
+  list-style: none;
+}
+
+/* 8. Suppression des styles de citations */
+blockquote, q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+/* 9. Réinitialisation des tableaux */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+th, td {
+  padding: 0;
+  text-align: left;
+}
+
+/* 10. Suppression des flèches sur les balises <details> */
+details>summary::-webkit-details-marker {
+  display: none;
+}
+details>summary::marker {
+  display: none;
+}
+
+/* 11. Suppression des flèches sur les inputs type number */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* 12. Harmonisation des styles de formulaire */
+button,
+input,
+select,
+textarea {
+  font: inherit; /* Hérite de la typographie de base */
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  outline: none;
+  appearance: none;
+}
+
+/* 13. Empêcher la sélection du texte sur certains éléments */
+button, input, textarea {
+  user-select: none;
+}
+
+/* 14. Rendre les images et vidéos responsives */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 15. Gestion du focus pour l'accessibilité */
+/* :focus-visible {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+} */
+
+/* 16. Suppression des animations pour les préférences de mouvement réduit */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* 17. Mode sombre (dark mode) */
+/* @media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+} */
+
+/* 18. Styles personnalisés pour les checkboxes et radios */
+input[type="checkbox"],
+input[type="radio"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  position: relative;
+}
+input[type="checkbox"]:checked::before,
+input[type="radio"]:checked::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: #333;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 2px;
+}
+
+/* 19. Personnalisation de la sélection du texte */
+::selection {
+  background-color: #4a90e2;
+  color: #fff;
+}

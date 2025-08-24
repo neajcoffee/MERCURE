@@ -1,0 +1,105 @@
+/* ---------------------------------------------------------------------------
+   _buttons.css (Admin Layout)
+   Styles des boutons pour l'interface d'administration
+   ---------------------------------------------------------------------------
+   Auteur       : Votre Nom
+   Date         : 2025-02-06
+   Description  : Ce fichier définit les styles des boutons pour l'admin layout,
+                  en utilisant des variables CSS pour les couleurs, les tailles
+                  et les espacements afin de garantir la cohérence et la responsivité.
+   --------------------------------------------------------------------------- */
+
+/* Boutons de base */
+.admin-layout .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    /* font-family: var(--font-primary); */
+    /* font-weight: 600; */
+    line-height: 1.5;
+    /* color: var(--textColor); */
+    background-color: var(--buttonColor);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* .admin-layout .btn:hover,
+  .admin-layout .btn:focus {
+    background-color: var(--secondary-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    outline: none;
+  } */
+  
+  .admin-layout .btn:disabled {
+    /* background-color: #ccc; */
+    /* color: #666; */
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+  
+  /* Variantes de boutons */
+  .admin-layout .btn-primary {
+    background-color: var(--buttonColor);
+    color: white
+  }
+  
+  .admin-layout .btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--textColor);
+  }
+  
+  .admin-layout .btn-outline {
+    background-color: transparent;
+    color: var(--buttonColor);
+    border: 2px solid var(--buttonColor);
+  }
+  
+  /* .admin-layout .btn-outline:hover {
+    background-color: var(--buttonColor);
+    color: var(--textColor);
+  } */
+  
+  /* Boutons de tailles différentes */
+  .admin-layout .btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: var(--font-size-sm);
+  }
+  
+  .admin-layout .btn-lg {
+    padding: 1rem 2rem;
+    font-size: var(--font-size-lg);
+  }
+  
+  /* Boutons avec icônes */
+  .admin-layout .btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .admin-layout .btn-icon svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  
+  /* Boutons en pleine largeur */
+  .admin-layout .btn-block {
+    display: block;
+    width: 100%;
+  }
+  
+
+  .admin-layout .btn .warning{
+    background-color: #e34545;
+  }
+
+  .admin-layout .btn .removeBtn{
+    background-color: #e34545;
+
+  }

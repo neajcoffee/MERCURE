@@ -1,0 +1,62 @@
+/* ========================================
+   main.css - Point d'entrée CSS principal
+   ======================================== */
+
+/* 1. Importation des fichiers de base (dans l'ordre de priorité) */
+@import url('base/_variables.css');     /* Variables CSS globales */
+@import url('base/_reset.css');         /* Réinitialisation des styles par défaut */
+@import url('base/_typography.css');    /* Typographie et polices */
+@import url('base/_spacing.css');       /* Variables et classes d'espacement */
+
+/* 2. Importation des styles de mise en page */
+@import url('layout/_grid.css');        /* Système de grilles */
+@import url('layout/_flex.css');        /* Utilitaires flexbox */
+
+/* 3. Importation des composants réutilisables */
+@import url('components/_buttons.css'); /* Styles des boutons */
+@import url('components/_cards.css');   /* Styles des cartes */
+@import url('components/_forms.css');   /* Styles des formulaires */
+@import url('components/_signup.css');  /* Styles des composants d'inscription */
+
+/* 4. Importation des classes utilitaires */
+@import url('utilities/_helpers.css');  /* Classes utilitaires diverses */
+
+/* 5. Styles globaux de l'application */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden; /* Empêche le scroll horizontal */
+  background: var(--background-color);
+}
+
+/* Classes de layout pour l'application */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Utilitaires de visibilité responsive */
+@media (max-width: 576px) {
+  .hidden-mobile { display: none !important; }
+  
+  /* Correction pour mobile */
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  #app {
+    width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+@media (min-width: 577px) {
+  .visible-mobile-only { display: none !important; }
+}

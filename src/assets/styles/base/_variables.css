@@ -1,0 +1,96 @@
+/* ---------------------------------------------------------------------------
+   _variables.css
+   Variables CSS globales pour la typographie et la mise en page
+   ---------------------------------------------------------------------------
+   Auteur       : Votre Nom
+   Date         : 2025-02-06
+   Description  : Ce fichier contient toutes les variables CSS pour la gestion
+                  des polices, tailles, couleurs, espacements, et transitions,
+                  afin d'assurer une cohérence et une flexibilité dans l'application.
+   --------------------------------------------------------------------------- */
+
+/* -----------------------------
+   Polices
+----------------------------- */
+:root {
+  /* --font-primary: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Segoe UI", roboto,
+    "Helvetica Neue", arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
+  --font-primary: roboto,
+    "Helvetica Neue", arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  /* --font-secondary: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Segoe UI", roboto,
+    "Helvetica Neue", arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
+
+  /* -----------------------------
+     Radius
+  ----------------------------- */
+    --radius-xs: 0.4rem;
+    --radius-sm: 0.6rem;
+    --radius-md: 0.9rem;
+    --radius-lg: 1.1rem;
+    --radius-xl: 1.5rem;
+    --radius-xxl: 2rem;
+    --radius-full: 9999px;
+
+  /* -----------------------------
+     Tailles de police
+  ----------------------------- */
+  --base-font-size: 16px;
+  --base-font-size-sm: 15px;
+  --base-font-size-lg: 18px;
+
+  /* Titres (fluides avec clamp) */
+  /* --h1-size: clamp(2rem, 5vw, 3rem);
+  --h2-size: clamp(1.75rem, 4vw, 2.5rem);
+  --h3-size: clamp(1.5rem, 3vw, 2rem);
+  --h4-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  --h5-size: clamp(1.1rem, 2vw, 1.5rem);
+  --h6-size: clamp(1rem, 1.8vw, 1.3rem); */
+
+
+  /* -----------------------------
+     Poids de police
+  ----------------------------- */
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+
+  /* -----------------------------
+     Couleurs
+  ----------------------------- */
+
+  --primary-color: #232323;
+  --secondary-color: #4d4d4d;
+  --tertiary-color: #1b3e3f;
+  --text-color: #64748b;
+  --text-surface: #4b5563;
+  /* --link-color: #007BFF; */
+  /* --link-hover-color: #0056b3; */
+  --border-color: #e0e0e0;
+
+  --background-color: linear-gradient(135deg, #1c122b 0%, #562f77 100%);
+  --button-color: #262626;
+
+  /* -----------------------------
+     Transitions et animations
+  ----------------------------- */
+  --transition-duration: 0.3s;
+
+  /* -----------------------------
+      Shadows
+  ----------------------------- */
+   --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0px 1px 0px 0px #0000000f, 0px 0px 0px 1px #00000005;
+   --shadow-blue: 0px 59px 16px -8px rgba(120, 149, 206, 0), 0px 38px 15px -8px rgba(120, 149, 206, .01), 0px 21px 13px -8px rgba(120, 149, 206, .04), 0px 9px 9px -4px rgba(120, 149, 206, .07), 0px 2px 5px 0px rgba(120, 149, 206, .08);
+   --shadow-stroke: 0px 1px 2px 0px rgba(164, 172, 185, .24), 0px 0px 0px 1px rgba(18, 55, 105, .08);
+   --sh-card:  0px 0px 0px 1px rgba(1, 71, 255, 0.04), 0px 1px 1px -0.5px rgba(11, 28, 74, 0.04), 0px 3px 3px -1.5px rgba(11, 28, 74, 0.04), 0px 6px 6px -3px rgba(11, 28, 74, 0.04), 0px 12px 12px -6px rgba(11, 28, 74, 0.04), 0px 24px 24px -12px rgba(11, 28, 74, 0.04);
+}
+
+/* -----------------------------
+   Mode sombre (dark mode)
+----------------------------- */
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #e0e0e0;
+    --background-color: #121212;
+    --link-color: #4a90e2;
+    --link-hover-color: #82b1ff;
+  }
+} */
