@@ -284,7 +284,7 @@ export default {
   opacity: 0.6;
 }
 
-/* Suppression des anciens styles hamburger */
+/* Suppression des aniens styles hamburger */
 .hamburger-line {
   display: none;
 }
