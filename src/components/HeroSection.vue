@@ -316,8 +316,8 @@ export default {
 
 .hero-content {
   color: white;
-
   padding: var(--spacing-xxl);
+  padding-bottom: var(--spacing-xs);
   /* border: dashed 2px var(--landing-color-primary); */
   /* border-radius: var(--radius-md); */
 }
