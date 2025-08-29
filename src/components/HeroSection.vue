@@ -122,19 +122,19 @@
       <div class="hero-stats">
         <div class="stat-item">
           <div class="stat-number" :class="{ 'blur-active': isAnimating }" :style="blurStyle">{{ animatedStats.clients
-            }}/5</div>
+          }}/5</div>
           <div class="stat-label">NOTE MOYENNE</div>
           <Activity class="hero-icon" />
         </div>
         <div class="stat-item">
           <div class="stat-number" :class="{ 'blur-active': isAnimating }" :style="blurStyle">{{ animatedStats.features
-            }} K+</div>
+          }} K+</div>
           <div class="stat-label">CLIENTS SATISFAITS</div>
           <Activity class="hero-icon" />
         </div>
         <div class="stat-item">
           <div class="stat-number" :class="{ 'blur-active': isAnimating }" :style="blurStyle">{{ animatedStats.support
-            }} %</div>
+          }} %</div>
           <div class="stat-label">TAUX DE RETENTION</div>
           <Activity class="hero-icon" />
         </div>
@@ -302,11 +302,12 @@ export default {
 } */
 
 .hero-container {
+  width: 100%;
   margin: 0 auto;
-  margin-top: var(--spacing-lg);
+  /* padding-top: var(--spacing-lg); */
   max-width: 1080px;
   /* padding: 0 var(--spacing-xl); */
-  padding: var(--spacing-sm);
+  /* padding: var(--spacing-sm); */
   display: flex;
   position: relative;
   z-index: 1;
@@ -678,6 +679,10 @@ export default {
     text-align: center;
     gap: var(--spacing-lg);
     /* margin-top: 10vh; */
+  }
+
+  .hero-content {
+    padding: var(--spacing-lg);
   }
 
   .hero-actions {
