@@ -677,7 +677,7 @@ export default {
     grid-template-columns: 1fr;
     text-align: center;
     gap: var(--spacing-lg);
-    margin-top: 10vh;
+    /* margin-top: 10vh; */
   }
 
   .hero-actions {
