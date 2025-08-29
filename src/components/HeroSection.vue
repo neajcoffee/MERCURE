@@ -122,19 +122,19 @@
       <div class="hero-stats">
         <div class="stat-item">
           <div class="stat-number" :class="{ 'blur-active': isAnimating }" :style="blurStyle">{{ animatedStats.clients
-          }}/5</div>
+            }}/5</div>
           <div class="stat-label">NOTE MOYENNE</div>
           <Activity class="hero-icon" />
         </div>
         <div class="stat-item">
           <div class="stat-number" :class="{ 'blur-active': isAnimating }" :style="blurStyle">{{ animatedStats.features
-          }} K+</div>
+            }} K+</div>
           <div class="stat-label">CLIENTS SATISFAITS</div>
           <Activity class="hero-icon" />
         </div>
         <div class="stat-item">
           <div class="stat-number" :class="{ 'blur-active': isAnimating }" :style="blurStyle">{{ animatedStats.support
-          }} %</div>
+            }} %</div>
           <div class="stat-label">TAUX DE RETENTION</div>
           <Activity class="hero-icon" />
         </div>
@@ -330,9 +330,10 @@ export default {
   justify-content: center;
   gap: var(--spacing-sm);
   background-color: #ffffff0d;
-  border: solid 1px #ffffff14;
+  /* border: solid 1px #ffffff14; */
   box-shadow: var(--shadow-soft);
   padding: var(--spacing-xs);
+  padding-right: var(--spacing-md);
   border-radius: var(--radius-xs);
   width: fit-content;
   margin: auto;
@@ -659,9 +660,9 @@ export default {
 }
 
 .hero-badge-icon {
-  background-color: white;
+  /* background-color: #ffffff; */
   padding: 4px;
-  border-radius: var(--radius-xs);
+  border-radius: 3px;
 }
 
 
@@ -687,7 +688,8 @@ export default {
     justify-content: center;
     width: 100%;
     gap: var(--spacing-xs);
-    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-top: 0;
   }
 
   .mockup-screen {
@@ -708,6 +710,7 @@ export default {
     justify-content: center;
     align-items: center;
     background-color: white;
+    mask: none;
   }
 
   .marquee-item {

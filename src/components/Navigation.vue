@@ -246,9 +246,9 @@ export default {
 .mobile-menu-toggle {
   display: none;
   /* background: none; */
-  /* background-color: rgba(255, 255, 255, 0.1); */
-  background-color: 
-  color-mix(in srgb, var(--landing-color-accent) 10%, transparent);
+  background-color: rgba(255, 255, 255, 0.1);
+  /* background-color: 
+  color-mix(in srgb, var(--landing-color-accent) 10%, transparent); */
   border: none;
   cursor: pointer;
   padding: var(--spacing-xs);
@@ -352,7 +352,7 @@ export default {
   }
 
   .navigation-container {
-    position: fixed;
+    position: absolute;
     top: 5vh;
     width: 100%;
     height: 6vh;
