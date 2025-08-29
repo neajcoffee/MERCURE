@@ -104,13 +104,14 @@ onMounted(() => {
 .landing-section-title{
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: var(--font-weight-black);
-  color: var(--landing-color-text);
+  /* color: var(--landing-color-text); */
+  color: var(--landing-color-text-white);
   margin-bottom: var(--spacing-md);
 }
 
 .landing-section-title-highlight{
-  background: linear-gradient(to right, var(--landing-color-primary),
-      color-mix(in srgb, var(--landing-color-primary) 80%, #000000));
+  background: linear-gradient(to right, var(--landing-color-accent),
+      color-mix(in srgb, var(--landing-color-accent) 80%, #000000));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

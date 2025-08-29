@@ -187,9 +187,10 @@ export default {
   flex-direction: column;
   align-items: center;
   gap: var(--spacing-sm);
-  border: dashed 1px var(--landing-color-accent);
+  background-color: #ffffff12;
+  /* border: dashed 1px var(--landing-color-accent); */
   width: max-content;
-  padding: var(--spacing-xs);
+  padding: var(--spacing-sm);
   border-radius: var(--radius-sm);
   margin: auto;
   margin-bottom: var(--spacing-xl);
@@ -322,6 +323,13 @@ export default {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    background-color: #ffffff12;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+  }
+
   .pricing-toggle {
     flex-direction: row;
     gap: var(--spacing-sm);

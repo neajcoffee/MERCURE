@@ -73,21 +73,9 @@ export default {
 </script>
 
 <style scoped>
-.landing-section-title {
-  color: var(--landing-color-text-white);
-}
-
-.landing-section-title-highlight {
-  background: linear-gradient(to right, var(--landing-color-accent),
-      color-mix(in srgb, var(--landing-color-accent) 80%, #000000));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
 .features-section {
   padding: var(--spacing-xs);
-  background: #00000063;
+  background: linear-gradient(180deg, #00000063, transparent);
 }
 
 .features-container {

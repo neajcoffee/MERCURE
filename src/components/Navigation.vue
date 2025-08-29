@@ -48,6 +48,20 @@ export default {
   methods: {
     toggleMobileMenu() {
       this.isMobileMenuOpen = !this.isMobileMenuOpen
+    },
+    closeMobileMenu() {
+      this.isMobileMenuOpen = false
+    },
+    handleClickOutside(event) {
+      // Vérifier si le clic est en dehors de la navigation et du bouton toggle
+      const navigationLinks = document.querySelector('.navigation-links')
+      const mobileToggle = document.querySelector('.mobile-menu-toggle')
+      
+      if (this.isMobileMenuOpen && 
+          !navigationLinks?.contains(event.target) && 
+          !mobileToggle?.contains(event.target)) {
+        this.closeMobileMenu()
+      }
     }
   },
   mounted() {
@@ -58,6 +72,13 @@ export default {
         this.isMobileMenuOpen = false
       })
     })
+
+    // Ajouter l'écouteur de clic global
+    document.addEventListener('click', this.handleClickOutside)
+  },
+  beforeUnmount() {
+    // Nettoyer l'écouteur d'événement
+    document.removeEventListener('click', this.handleClickOutside)
   }
 }
 </script>
@@ -180,8 +201,8 @@ export default {
 .nav-link:hover {
   /* color: var(--landing-color-accent-light); */
   color: var(--landing-color-accent);
-    /* background-color: #ffffff29; */
-    /* background-color: 
+  /* background-color: #ffffff29; */
+  /* background-color: 
  color-mix(in srgb, var(--landing-color-accent) 10%, transparent);
   /* background-color: #ffffff29; */
   /* background-color: 
@@ -314,16 +335,18 @@ export default {
     top: 11vh;
     left: 0;
     right: 0;
-    background: var(--landing-color-primary);
+    width: 95%;
+    margin: auto;
+    background: #ffffff;
     flex-direction: column;
     padding: var(--spacing-md);
-    gap: var(--spacing-lg);
+    gap: var(--spacing-xs);
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    border-radius: var(--radius-md);
   }
 
   .navigation-links--open {
@@ -333,7 +356,7 @@ export default {
   }
 
   .nav-link {
-    color: var(--landing-color-text-white);
+    color: var(--landing-color-text);
     padding: var(--spacing-md);
     border-radius: var(--radius-sm);
     text-align: center;
