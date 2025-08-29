@@ -4,10 +4,10 @@
       <div class="landing-header-section">
         <h2 class="landing-section-title">
 
-          Plus de <span class="landing-section-title-highlight">400€ d'apps économisés</span>
+          Plus de <span class="landing-section-title-highlight">400€/mois économisés</span>
         </h2>
         <p class="features-subtitle">
-          Découvrez comment Stella peut transformer votre façon de travailler
+          Réduisez vos frais mensuels en regroupant toutes vos applications dans un seul thème Shopify.
         </p>
       </div>
 
@@ -73,28 +73,48 @@ export default {
 </script>
 
 <style scoped>
+.landing-section-title {
+  color: var(--landing-color-text-white);
+}
+
+.landing-section-title-highlight {
+  background: linear-gradient(to right, var(--landing-color-accent),
+      color-mix(in srgb, var(--landing-color-accent) 80%, #000000));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .features-section {
-  padding: var(--spacing-xxl) 0;
-  background: #f8f9fa;
+  padding: var(--spacing-xs);
+  background: #00000063;
 }
 
 .features-container {
-  max-width: 1200px;
   margin: 0 auto;
-  /* padding: 0 var(--spacing-lg); */
+  padding-top: var(--spacing-xxl);
+  border-radius: var(--radius-xxl);
+  background: linear-gradient(180deg, #ffffff05 0%, transparent 30%);
 }
 
 .features-subtitle {
   padding: 0 var(--spacing-md);
+  color: #b7b7b7;
+
 }
 
 .features-grid {
+  max-width: 1200px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: var(--spacing-sm);
-  /* border: 2px dashed var(--landing-color-primary); */
+  gap: var(--spacing-xs);
   padding: var(--spacing-md);
   border-radius: var(--radius-xl);
+  background: #f8f9fa;
+  border-radius: var(--radius-xxl);
+  margin: auto;
+
+
 
 }
 
@@ -121,6 +141,7 @@ export default {
   justify-content: center;
   margin: auto;
   margin-bottom: var(--spacing-lg);
+  display: none;
 }
 
 .icon {
@@ -171,4 +192,5 @@ export default {
   .feature-card {
     padding: var(--spacing-lg);
   }
-}</style>
+}
+</style>

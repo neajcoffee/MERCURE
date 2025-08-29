@@ -71,7 +71,7 @@ export default {
   z-index: 1000;
   /* background: rgba(255, 255, 255, 0.95); */
   /* background: var(--landing-color-primary); */
-  backdrop-filter: blur(10px);
+  /* backdrop-filter: blur(10px); */
   /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
   transition: all 0.3s ease;
 }
@@ -83,7 +83,8 @@ export default {
   align-items: center;
   justify-content: space-between;
   gap: var(--spacing-lg);
-  background-color: var(--landing-color-primary);
+  /* background-color: var(--landing-color-primary); */
+  /* background-color: #ffffff05; */
 }
 
 .navigation-logo {
@@ -172,11 +173,19 @@ export default {
   position: relative;
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: var(--radius-xs);
+  font-size: var(--font-size-sm);
+
 }
 
 .nav-link:hover {
   /* color: var(--landing-color-accent-light); */
-  background-color: #ffffff29;
+  color: var(--landing-color-accent);
+    /* background-color: #ffffff29; */
+    /* background-color: 
+ color-mix(in srgb, var(--landing-color-accent) 10%, transparent);
+  /* background-color: #ffffff29; */
+  /* background-color: 
+  color-mix(in srgb, var(--landing-color-accent) 10%, transparent); */
 }
 
 /* .nav-link::after {
@@ -237,7 +246,9 @@ export default {
 .mobile-menu-toggle {
   display: none;
   /* background: none; */
-  background-color: rgba(255, 255, 255, 0.1);
+  /* background-color: rgba(255, 255, 255, 0.1); */
+  background-color: 
+  color-mix(in srgb, var(--landing-color-accent) 10%, transparent);
   border: none;
   cursor: pointer;
   padding: var(--spacing-xs);
@@ -326,7 +337,6 @@ export default {
     padding: var(--spacing-md);
     border-radius: var(--radius-sm);
     text-align: center;
-    font-size: var(--font-size-md);
   }
 
   .nav-link:hover {

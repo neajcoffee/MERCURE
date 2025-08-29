@@ -144,7 +144,7 @@ export default {
 <style scoped>
 .pricing-section {
   padding: var(--spacing-xxl) 0;
-  background: white;
+  /* background: white; */
 }
 
 .pricing-container {
@@ -187,7 +187,7 @@ export default {
   flex-direction: column;
   align-items: center;
   gap: var(--spacing-sm);
-  border: dashed 1px #00000012;
+  border: dashed 1px var(--landing-color-accent);
   width: max-content;
   padding: var(--spacing-xs);
   border-radius: var(--radius-sm);
@@ -200,7 +200,7 @@ export default {
   align-items: center;
   justify-content: center;
   gap: var(--spacing-md);
-  background: #f8f9fa;
+  background: #ffffffc7;
   padding: var(--spacing-xs);
   border-radius: var(--radius-xs);
 }
@@ -208,7 +208,7 @@ export default {
 
 .toggle-label {
   font-weight: 500;
-  color: var(--text-color);
+  color: var(--landing-color-accent);
   margin-right: var(--spacing-md);
 }
 

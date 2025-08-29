@@ -58,7 +58,7 @@ onMounted(() => {
 #landing-layout {
   /* Couleurs principales */
   /* --landing-color-primary: #ff4f5f; */
-  --landing-color-primary: #8b4fff;
+  --landing-color-primary: #052b33;
   --landing-color-primary-dark: #1d4ed8;
   --landing-color-primary-light: #3b82f6;
   
@@ -69,6 +69,8 @@ onMounted(() => {
   /* Couleurs d'accent */
   --landing-color-accent: #f59e0b;
   --landing-color-accent-light: #fbbf24;
+  --landing-color-accent: #affa13;
+  
   
   /* Couleurs de fond */
   /* --landing-color-background: #ffffff; */
@@ -120,6 +122,10 @@ onMounted(() => {
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
+}
+
+#landing-layout{
+  background-color: var(--landing-color-primary);
 }
 
 </style>
