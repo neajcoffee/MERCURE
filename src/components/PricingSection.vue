@@ -25,15 +25,15 @@
         </div>
       </div>
 
-      <GenericPricingPlan title="" subtitle="" :plans="formattedPlans" theme-color="var(--landing-color-primary)"
+      <GenericPricingPlan class="pricing-plans" title="" subtitle="" :plans="formattedPlans" theme-color="var(--landing-color-primary)"
         @plan-selected="handlePlanSelection">
-        <template #footer>
-          <div class="pricing-note">
+        <!-- <template #footer> -->
+          <!-- <div class="pricing-note">
             <p>
               * Faut trouver un truc à dire ici.
             </p>
-          </div>
-        </template>
+          </div> -->
+        <!-- </template> -->
       </GenericPricingPlan>
 
       <!-- Loader overlay -->
@@ -62,11 +62,90 @@ export default {
     return {
       billingCycle: 'monthly',
       isProcessingPayment: false,
-      plans: []
+      plans: [
+        {
+          "_id": "68a986b8f0b2d383c9fbf990",
+          "name": "Mercure Basic",
+          "description": "Abonnement au thème Mercure pour 1 boutiques Shopify.",
+          "active": true,
+          "createdAt": "2025-08-03T11:55:07.120Z",
+          "updatedAt": "2025-08-03T14:54:18.996Z",
+          "__v": 0,
+          "features": [
+            "1 licence",
+            "Toutes les fonctionnalités incluses",
+            "Mises à jour du thème",
+            "10% sur Trendtrack",
+            "Lancez votre boutique pour 1€/mois",
+            "To-do list pour démarrer l'e-commerce"
+          ],
+          "max_licenses": 1,
+          "popular": false,
+          "popularText": "Populaire",
+          // "stripe_product_id": "prod_SgvgSKQA6ZVNwh",
+          "stripe_product_id": "prod_SqI7zUHOU7aar6",
+          "monthlyPrice": 19.99,
+          "yearlyPrice": 203.89,
+          "ctaText": "Commencez",
+          "note": "ouais ouais ouais"
+        },
+        {
+          "_id": "68a986def0b2d383c9fbf992",
+          "name": "Mercure Scale",
+          "description": "Abonnement au thème Mercure pour 3 licenses.",
+          "active": true,
+          "createdAt": "2025-08-03T11:55:11.823Z",
+          "updatedAt": "2025-08-03T14:54:29.199Z",
+          "__v": 0,
+          "max_licenses": 3,
+          "popular": true,
+          "popularText": "Le plus populaire",
+          "features": [
+            "3 licences",
+            "Toutes les fonctionnalités incluses",
+            "10% sur Trendtrack",
+            "Lancez votre boutique pour 1€/mois",
+            "To-do list pour démarrer l'e-commerce",
+            "Top boutique du moment"
+          ],
+          "stripe_product_id": "prod_SgvhBRsZwHf0kH",
+          "monthlyPrice": 39.99,
+          "yearlyPrice": 407.89,
+          "ctaText": "Commencez",
+          "note": "non non non"
+        },
+        {
+          "_id": "68a98700f0b2d383c9fbf994",
+          "name": "Mercure Business",
+          "description": "abonnement mensuel au thème Mercure. licenses illimitées",
+          "active": true,
+          "createdAt": "2025-08-03T11:55:14.163Z",
+          "updatedAt": "2025-08-03T14:54:39.037Z",
+          "__v": 0,
+          "max_licenses": 999,
+          "features": [
+            "10 licences",
+            "Toutes les fonctionnalités incluses",
+            "Mises à jour du thème",
+            "10% sur Trendtrack",
+            "Lancez votre boutique pour 1€/mois",
+            "To-do list pour démarrer l'e-commerce",
+            "Top boutique du moment",
+            "SAV prioritaire"
+          ],
+          "popular": false,
+          "popularText": "Populaire",
+          "yearlyPrice": 815.89,
+          "ctaText": "Commencez",
+          "note": "peu pue pue",
+          "monthlyPrice": 79.99,
+          "stripe_product_id": "prod_Sgvh8QqnVOoktx"
+        }
+      ]
     }
   },
   created() {
-    this.fetchPlans()
+    // this.fetchPlans()
   },
   computed: {
     formattedPlans() {
@@ -204,6 +283,12 @@ export default {
   background: #ffffffc7;
   padding: var(--spacing-xs);
   border-radius: var(--radius-xs);
+}
+
+.pricing-plans {
+  background-color: #ffffff12;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
 }
 
 

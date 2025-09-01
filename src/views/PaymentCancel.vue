@@ -3,11 +3,11 @@
     <div class="cancel-container">
       <div class="cancel-icon">
         <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="10" fill="#EF4444"/>
-          <path d="M15 9l-6 6M9 9l6 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="12" cy="12" r="10" fill="#EF4444" />
+          <path d="M15 9l-6 6M9 9l6 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
       </div>
-      
+
       <h1 class="cancel-title">Paiement annulé</h1>
       <p class="cancel-subtitle">
         Votre paiement a été annulé. Aucun montant n'a été débité de votre compte.
@@ -15,24 +15,24 @@
 
       <div class="cancel-message">
         <p>
-          Nous comprenons que vous puissiez avoir des questions ou des préoccupations. 
-          N'hésitez pas à nous contacter si vous avez besoin d'aide pour choisir le plan qui vous convient le mieux.
+          Nous comprenons que vous puissiez avoir des questions ou des préoccupations.
+          N'hésitez pas à nous contacter si vous avez besoin d'aide.
         </p>
       </div>
 
       <div class="cancel-actions">
-        <button @click="retryPayment" class="btn-primary">
+        <!-- <button @click="retryPayment" class="btn-primary">
           Réessayer le paiement
+        </button> -->
+        <button @click="goToHome" class="btn-secondary">
+          Retourner à la page d'accueil
         </button>
-        <button @click="goToPricing" class="btn-secondary">
-          Voir les plans
-        </button>
-        <button @click="contactSupport" class="btn-outline">
+        <!-- <button @click="contactSupport" class="btn-outline">
           Contacter le support
-        </button>
+        </button> -->
       </div>
 
-      <div class="help-section">
+      <!-- <div class="help-section">
         <h4>Besoin d'aide ?</h4>
         <div class="help-options">
           <div class="help-item">
@@ -51,7 +51,7 @@
             <a href="/signup" class="help-link">Commencer l'essai</a>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -78,9 +78,9 @@ export default {
         this.$router.push({
           path: '/',
           hash: '#pricing',
-          query: { 
+          query: {
             plan: this.planId,
-            billing: this.billingCycle 
+            billing: this.billingCycle
           }
         })
       } else {
@@ -118,7 +118,7 @@ export default {
 
 .cancel-container {
   background: white;
-  padding: var(--spacing-xxl);
+  padding: var(--spacing-lg);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   text-align: center;
@@ -162,11 +162,13 @@ export default {
   display: flex;
   gap: var(--spacing-md);
   justify-content: center;
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
   flex-wrap: wrap;
 }
 
-.btn-primary, .btn-secondary, .btn-outline {
+.btn-primary,
+.btn-secondary,
+.btn-outline {
   padding: var(--spacing-md) var(--spacing-xl);
   border-radius: var(--radius-md);
   font-weight: 600;
@@ -262,16 +264,18 @@ export default {
   .cancel-container {
     padding: var(--spacing-lg);
   }
-  
+
   .cancel-title {
     font-size: 2rem;
   }
-  
+
   .cancel-actions {
     flex-direction: column;
   }
-  
-  .btn-primary, .btn-secondary, .btn-outline {
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-outline {
     width: 100%;
   }
 
@@ -279,4 +283,4 @@ export default {
     grid-template-columns: 1fr;
   }
 }
-</style> 
+</style>

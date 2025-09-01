@@ -73,6 +73,7 @@ export default {
 </script>
 
 <style scoped>
+
 .features-section {
   padding: var(--spacing-xs);
   background: linear-gradient(180deg, #00000063, transparent);

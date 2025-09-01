@@ -1,7 +1,7 @@
 <template>
   <section id="testimonials" class="testimonials-section">
 
-      <div class="pricing-container">
+    <div class="pricing-container">
       <div class="landing-header-section">
         <h2 class="landing-section-title">
           Ce que disent nos <span class="landing-section-title-highlight">clients</span>
@@ -9,7 +9,7 @@
         <p class="landing-section-subtitle">
           Découvrez pourquoi des milliers d'équipes font confiance à Stella
         </p>
-      </div> 
+      </div>
 
       <div class="review-container">
         <div class="review-mask">
@@ -115,7 +115,7 @@
         </div>
       </div>
 
-      <div class="testimonials-stats">
+      <!-- <div class="testimonials-stats">
         <div class="stat-item">
           <div class="stat-number">4.9/5</div>
           <div class="stat-label">Note moyenne</div>
@@ -128,7 +128,7 @@
           <div class="stat-number">98%</div>
           <div class="stat-label">Taux de rétention</div>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
 </template>
@@ -201,8 +201,12 @@ export default {
 
 <style scoped>
 .testimonials-section {
-  padding: var(--spacing-xxl) 0;
-  background: #f8f9fa;
+  /* padding: var(--spacing-xxl) 0; */
+  /* background: #f8f9fa; */
+  margin: 0 auto;
+  padding-top: var(--spacing-xxl);
+  border-radius: var(--radius-xxl);
+  background: linear-gradient(180deg, #ffffff05 0%, transparent 30%);
 }
 
 .testimonials-container {
@@ -239,14 +243,17 @@ export default {
 }
 
 
-.review-container {}
+.review-container {
+  background-color: white;
+  border-radius: var(--radius-xxl) var(--radius-xxl) 0 0;
+  padding-top: var(--spacing-xl);
+}
 
 .review-mask {
   grid-column-gap: 2em;
   grid-row-gap: 2em;
   flex-flow: column;
-  padding-top: 2em;
-  padding-bottom: 4em;
+  padding: var(--spacing-xl) 0;
   display: flex;
   overflow: hidden;
   -webkit-mask: linear-gradient(90deg, #0000 0%, #fff 15% 85%, #0000 100%);
@@ -259,6 +266,8 @@ export default {
   flex-direction: column;
   position: relative;
   gap: var(--spacing-md);
+  border: dashed 2px #00000008;
+  padding: var(--spacing-sm);
 
 }
 
@@ -429,11 +438,11 @@ export default {
 }
 
 .review-list--left {
-  animation: translateX 30s linear infinite;
+  animation: translateX 15s linear infinite;
 }
 
 .review-list--right {
-  animation: translateXReverse 30s linear infinite;
+  animation: translateXReverse 15s linear infinite;
 }
 
 @keyframes translateX {

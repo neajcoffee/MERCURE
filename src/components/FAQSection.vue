@@ -132,6 +132,10 @@ export default {
 </script>
 
 <style scoped>
+.landing-section-title {
+  color: var(--landing-color-text);
+}
+
 .faq-section {
   padding: var(--spacing-xxl) 0;
   background: white;

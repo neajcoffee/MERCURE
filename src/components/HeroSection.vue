@@ -332,7 +332,7 @@ export default {
   gap: var(--spacing-sm);
   background-color: #ffffff0d;
   /* border: solid 1px #ffffff14; */
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--shadow-soft), 0px 1px 8px #00000029;
   padding: var(--spacing-xs);
   padding-right: var(--spacing-md);
   border-radius: var(--radius-xs);

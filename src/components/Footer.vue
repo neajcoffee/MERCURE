@@ -4,12 +4,11 @@
       <div class="footer-content">
         <div class="footer-section">
           <div class="footer-logo">
-            <span class="logo-icon">🚀</span>
-            <span class="logo-text">Stella</span>
+            <!-- <span class="logo-icon">🚀</span> -->
+            <span class="logo-text">Mercure Thème</span>
           </div>
           <p class="footer-description">
-            La plateforme SaaS moderne qui transforme votre productivité
-            avec l'intelligence artificielle.
+            Le thème Shopify le plus performant. 
           </p>
           <div class="footer-social">
             <a href="#" class="social-link" aria-label="Twitter">
@@ -38,13 +37,13 @@
           <ul class="footer-links">
             <li><a href="#features" class="footer-link">Fonctionnalités</a></li>
             <li><a href="#pricing" class="footer-link">Tarifs</a></li>
-            <li><a href="#" class="footer-link">Intégrations</a></li>
-            <li><a href="#" class="footer-link">API</a></li>
-            <li><a href="#" class="footer-link">Changelog</a></li>
+            <!-- <li><a href="#" class="footer-link">Intégrations</a></li> -->
+            <!-- <li><a href="#" class="footer-link">API</a></li> -->
+            <!-- <li><a href="#" class="footer-link">Changelog</a></li> -->
           </ul>
         </div>
 
-        <div class="footer-section">
+        <!-- <div class="footer-section">
           <h3 class="footer-title">Ressources</h3>
           <ul class="footer-links">
             <li><a href="#" class="footer-link">Documentation</a></li>
@@ -53,27 +52,27 @@
             <li><a href="#" class="footer-link">Webinaires</a></li>
             <li><a href="#" class="footer-link">Support</a></li>
           </ul>
-        </div>
+        </div> -->
 
         <div class="footer-section">
           <h3 class="footer-title">Entreprise</h3>
           <ul class="footer-links">
             <li><a href="#" class="footer-link">À propos</a></li>
-            <li><a href="#" class="footer-link">Carrières</a></li>
+            <!-- <li><a href="#" class="footer-link">Carrières</a></li> -->
             <li><a href="#" class="footer-link">Contact</a></li>
-            <li><a href="#" class="footer-link">Presse</a></li>
-            <li><a href="#" class="footer-link">Partenaires</a></li>
+            <!-- <li><a href="#" class="footer-link">Presse</a></li> -->
+            <!-- <li><a href="#" class="footer-link">Partenaires</a></li> -->
           </ul>
         </div>
 
         <div class="footer-section">
           <h3 class="footer-title">Légal</h3>
           <ul class="footer-links">
-            <li><a href="#" class="footer-link">Confidentialité</a></li>
-            <li><a href="#" class="footer-link">Conditions</a></li>
-            <li><a href="#" class="footer-link">Cookies</a></li>
-            <li><a href="#" class="footer-link">Licences</a></li>
-            <li><a href="#" class="footer-link">Sécurité</a></li>
+            <li><a href="#" class="footer-link">Politique de confidentialité</a></li>
+            <li><a href="#" class="footer-link">Conditions d'utilisation</a></li>
+            <!-- <li><a href="#" class="footer-link">Cookies</a></li> -->
+            <!-- <li><a href="#" class="footer-link">Licences</a></li> -->
+            <!-- <li><a href="#" class="footer-link">Sécurité</a></li> -->
           </ul>
         </div>
       </div>
@@ -129,7 +128,7 @@ export default {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
 }
 
 .logo-icon {
