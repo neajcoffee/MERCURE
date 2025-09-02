@@ -83,11 +83,11 @@ export default {
           "popular": false,
           "popularText": "Populaire",
           // "stripe_product_id": "prod_SgvgSKQA6ZVNwh",
-          "stripe_product_id": "prod_SqI7zUHOU7aar6",
+          "stripe_product_id": "prod_SgvhBRsZwHf0kH",
           "monthlyPrice": 19.99,
           "yearlyPrice": 203.89,
           "ctaText": "Commencez",
-          "note": "ouais ouais ouais"
+          "note": "Sans engagement"
         },
         {
           "_id": "68a986def0b2d383c9fbf992",
@@ -112,7 +112,7 @@ export default {
           "monthlyPrice": 39.99,
           "yearlyPrice": 407.89,
           "ctaText": "Commencez",
-          "note": "non non non"
+          "note": "Sans engagement"
         },
         {
           "_id": "68a98700f0b2d383c9fbf994",
@@ -122,7 +122,7 @@ export default {
           "createdAt": "2025-08-03T11:55:14.163Z",
           "updatedAt": "2025-08-03T14:54:39.037Z",
           "__v": 0,
-          "max_licenses": 999,
+          "max_licenses": 10,
           "features": [
             "10 licences",
             "Toutes les fonctionnalités incluses",
@@ -137,7 +137,7 @@ export default {
           "popularText": "Populaire",
           "yearlyPrice": 815.89,
           "ctaText": "Commencez",
-          "note": "peu pue pue",
+          "note": "Sans engagement",
           "monthlyPrice": 79.99,
           "stripe_product_id": "prod_Sgvh8QqnVOoktx"
         }
@@ -145,7 +145,7 @@ export default {
     }
   },
   created() {
-    // this.fetchPlans()
+    this.fetchPlans()
   },
   computed: {
     formattedPlans() {
@@ -172,6 +172,7 @@ export default {
       try {
         const response = await subscriptionService.getAvailablePlans()
         const plans = Array.isArray(response) ? response : (response?.plans || response?.data || [])
+        console.log(plans)
         this.plans = plans
       } catch (err) {
         console.error(err)
@@ -279,7 +280,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--spacing-md);
   background: #ffffffc7;
   padding: var(--spacing-xs);
   border-radius: var(--radius-xs);
