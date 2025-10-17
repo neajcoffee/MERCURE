@@ -60,3 +60,7 @@ body {
 @media (min-width: 577px) {
   .visible-mobile-only { display: none !important; }
 }
+
+button:focus {
+  outline: none;
+}
