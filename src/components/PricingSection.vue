@@ -66,7 +66,7 @@ export default {
         {
           "_id": "68a986b8f0b2d383c9fbf990",
           "name": "Mercure Basic",
-          "description": "Abonnement au thème Mercure pour 1 boutiques Shopify.",
+          "description": "Abonnement au thème Mercure pour 1 boutique Shopify.",
           "active": true,
           "createdAt": "2025-08-03T11:55:07.120Z",
           "updatedAt": "2025-08-03T14:54:18.996Z",
