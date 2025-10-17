@@ -28,9 +28,9 @@
       </div>
 
       <!-- Slot pour le bouton d'upgrade -->
-      <div class="sidebar-upgrade">
+      <!-- <div class="sidebar-upgrade">
         <slot name="upgrade"></slot>
-      </div>
+      </div> -->
 
       <!-- Slot pour le profil utilisateur -->
       <div class="sidebar-user">
@@ -117,7 +117,7 @@ export default {
 }
 
 .split-view-toggle--active {
-  background-color: var(--background-hover);
+  /* background-color: var(--background-hover); */
 }
 
 .sidebar {
@@ -135,7 +135,7 @@ export default {
   display: flex;
   flex-direction: column;
   transition: transform 0.3s cubic-bezier(.4, 0, .2, 1);
-  transform: translateX(-100%);
+  transform: translateX(-115%);
   color: #fff;
   padding: var(--spacing-sm);
 }
@@ -373,4 +373,13 @@ export default {
   cursor: pointer;
   transition: background 0.2s, box-shadow 0.2s;
 } */
+@media (max-width: 768px) {
+  .sidebar {
+    background: var(--background-color, #222e3a);
+  }
+  .split-view-toggle {
+    top: auto;
+    bottom: var(--spacing-lg);
+  }
+}
 </style>

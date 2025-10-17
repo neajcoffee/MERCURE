@@ -36,6 +36,13 @@
           <span class="sidebar-nav-label">Thème</span>
         </button>
 
+        <!-- TrendTrack -->
+        <button class="sidebar-nav-btn" :class="{ 'sidebar-nav-btn--active': selectedTab === 'trendtrack' }"
+          @click="selectedTab = 'trendtrack'">
+          <Zap class="sidebar-nav-icon" :size="20" />
+          <span class="sidebar-nav-label">TrendTrack</span>
+        </button>
+
         <!-- Composants -->
         <!-- <button class="sidebar-nav-btn" :class="{ 'sidebar-nav-btn--active': selectedTab === 'composants' }"
           @click="selectedTab = 'composants'">
@@ -44,11 +51,11 @@
         </button> -->
 
         <!-- Mon abonnement -->
-        <button class="sidebar-nav-btn" :class="{ 'sidebar-nav-btn--active': selectedTab === 'subscription' }"
+        <!-- <button class="sidebar-nav-btn" :class="{ 'sidebar-nav-btn--active': selectedTab === 'subscription' }"
           @click="selectedTab = 'subscription'">
           <Zap class="sidebar-nav-icon" :size="20" />
           <span class="sidebar-nav-label">Abonnement</span>
-        </button>
+        </button> -->
 
       </template>
 
@@ -57,7 +64,7 @@
         <!-- <button class="sidebar-link">Obtenir 1 mois gratuit</button>
         Demande de fonctionnalité -->
       </template>
-      
+
       <!-- Upgrade -->
       <template #upgrade>
         <span class="sidebar-upgrade-label">
@@ -242,7 +249,15 @@
         </template>
         <Subscription />
       </GenericPanel>
-      
+
+      <!-- Panel TrendTrack -->
+      <GenericPanel v-if="selectedTab === 'trendtrack'">
+        <template #header>
+          <h2 class="generic-panel-title">TrendTrack</h2>
+          <p>Profitez de -10% sur votre abonnement TrendTrack.</p>
+        </template>
+        <Trendtrack />
+      </GenericPanel>
     </div>
   </div>
 </template>
@@ -259,6 +274,7 @@ import GenericButton from '../components/base/GenericButton.vue'
 import ComponentShowcase from '../components/base/ComponentShowcase.vue'
 import Licenses from '../components/Licenses.vue'
 import Themes from '../components/Themes.vue'
+import Trendtrack from '../components/Trendtrack.vue'
 import Subscription from '../components/Subscription.vue'
 import Profile from '../components/Profile.vue'
 import { Home, BarChart3, Key, Palette, Package, MoreVertical, Settings, LogOut, Zap, UserRoundCog } from 'lucide-vue-next'
@@ -289,6 +305,7 @@ export default {
     ComponentShowcase,
     Licenses,
     Themes,
+    Trendtrack,
     Subscription,
     Profile,
     Home,
@@ -611,7 +628,8 @@ export default {
 .sidebar-upgrade-label svg {
   vertical-align: middle;
   margin-right: 6px;
-  color: #facc15; /* jaune vif */
+  color: #facc15;
+  /* jaune vif */
 }
 
 
@@ -980,6 +998,14 @@ export default {
 
 /* Responsive design */
 @media (max-width: 768px) {
+  .dashboard-container {
+    padding: 0;
+  }
+
+  .main-content {
+    border-radius: 0;
+  }
+
   .stats-grid {
     grid-template-columns: 1fr;
   }

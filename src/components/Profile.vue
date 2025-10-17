@@ -86,14 +86,14 @@
                         <span class="customer-label">Téléphone :</span>
                         <span class="customer-value">{{ currentCustomer.phone || 'Non renseigné' }}</span>
                     </div>
-                    <div class="customer-row">
+                    <!-- <div class="customer-row">
                         <span class="customer-label">Entreprise :</span>
                         <span class="customer-value">{{ currentCustomer.company_name || 'Non renseigné' }}</span>
-                    </div>
-                    <div class="customer-row">
+                    </div> -->
+                    <!-- <div class="customer-row">
                         <span class="customer-label">Domaine :</span>
                         <span class="customer-value">{{ currentCustomer.shop_domain }}</span>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div v-else class="customer-form">

@@ -17,7 +17,7 @@
             <!-- Première ligne : animation de gauche à droite -->
             <div class="review-list review-list--left">
               <!-- Premier groupe d'avis -->
-              <div class="review-card" v-for="testimonial in testimonials" :key="`first-left-${testimonial.id}`">
+              <div class="review-card" v-for="testimonial in firstTestimonialGroup" :key="`first-left-${testimonial.id}`">
                 <div class="review-content">
                   <div class="review-header">
                     <div class="author-avatar">
@@ -40,7 +40,7 @@
               </div>
 
               <!-- Deuxième groupe d'avis (duplication pour la boucle) -->
-              <div class="review-card" v-for="testimonial in testimonials" :key="`second-left-${testimonial.id}`">
+              <div class="review-card" v-for="testimonial in firstTestimonialGroup" :key="`second-left-${testimonial.id}`">
                 <div class="review-content">
                   <div class="review-header">
                     <div class="author-avatar">
@@ -66,7 +66,7 @@
             <!-- Deuxième ligne : animation de droite à gauche -->
             <div class="review-list review-list--right">
               <!-- Premier groupe d'avis -->
-              <div class="review-card" v-for="testimonial in testimonials" :key="`first-right-${testimonial.id}`">
+              <div class="review-card" v-for="testimonial in secondTestimonialGroup" :key="`first-right-${testimonial.id}`">
                 <div class="review-content">
                   <div class="review-header">
                     <div class="author-avatar">
@@ -89,7 +89,7 @@
               </div>
 
               <!-- Deuxième groupe d'avis (duplication pour la boucle) -->
-              <div class="review-card" v-for="testimonial in testimonials" :key="`second-right-${testimonial.id}`">
+              <div class="review-card" v-for="testimonial in secondTestimonialGroup" :key="`second-right-${testimonial.id}`">
                 <div class="review-content">
                   <div class="review-header">
                     <div class="author-avatar">
@@ -138,10 +138,10 @@ export default {
   name: 'TestimonialsSection',
   data() {
     return {
-      testimonials: [
+      firstTestimonialGroup: [
         {
           id: 1,
-          quote: "Stella a complètement transformé notre façon de travailler. L'IA intégrée nous fait gagner des heures chaque semaine sur les tâches répétitives.",
+          quote: "Je n’arrivais pas à vendre sur Shopify… jusqu’à ce que je découvre Mercure. Mon chiffre d’affaires a doublé en un mois ! Ce thème a littéralement changé ma vie.",
           rating: 5,
           name: "Marie Dubois",
           title: "Directrice Marketing",
@@ -159,7 +159,7 @@ export default {
         },
         {
           id: 3,
-          quote: "Nous avons augmenté notre productivité de 40% depuis que nous utilisons Stella. L'investissement en vaut vraiment la peine.",
+          quote: "Mercure a transformé ma boutique en un site professionnel et élégant. Mes clients adorent naviguer dessus, je gagne  du temps pour me concentrer sur mon business.",
           rating: 5,
           name: "Sophie Bernard",
           title: "Chef de Projet",
@@ -168,7 +168,7 @@ export default {
         },
         {
           id: 4,
-          quote: "Les analytics avancés nous donnent des insights précieux sur nos performances. C'est un outil indispensable pour notre équipe.",
+          quote: "Les conversions ont augmenté dès la première semaine et mes clients restent plus longtemps sur mon site.",
           rating: 5,
           name: "Lucas Petit",
           title: "Data Analyst",
@@ -177,7 +177,7 @@ export default {
         },
         {
           id: 5,
-          quote: "La collaboration d'équipe est maintenant fluide et efficace. Stella a résolu tous nos problèmes de communication.",
+          quote: "Ce thème m’a permis de me concentrer sur ce qui compte vraiment : mes clients. Mercure s’occupe de tout le reste, et mes ventes le prouvent.",
           rating: 5,
           name: "Emma Rousseau",
           title: "Product Manager",
@@ -186,12 +186,68 @@ export default {
         },
         {
           id: 6,
-          quote: "Sécurité, performance et facilité d'utilisation. Stella coche toutes les cases pour une solution SaaS enterprise.",
+          quote: "Mon équipe a pu déployer notre boutique en un temps record, et les KPIs de conversion ont augmenté de 35 % dès le premier mois.",
           rating: 5,
           name: "Pierre Moreau",
           title: "CTO",
           company: "EnterpriseTech",
           avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
+        }
+      ],
+      secondTestimonialGroup: [
+        {
+          id: 7,
+          quote: "Mercure ne se contente pas d’être beau : il est construit pour la performance.",
+          rating: 5,
+          name: "Alice Lemoine",
+          title: "Designer",
+          company: "CreativesCo",
+          avatar: "https://images.unsplash.com/photo-1502767089025-6572583495b6?w=150&h=150&fit=crop&crop=face"
+        },
+        {
+          id: 8,
+          quote: "Mercure est l’outil idéal pour les professionnels qui veulent maximiser leurs conversions.",
+          rating: 5,
+          name: "Kevin Roux",
+          title: "Growth Hacker",
+          company: "StartGrowth",
+          avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face"
+        },
+        {
+          id: 9,
+          quote: "Grâce à Mercure, notre boutique en ligne a une allure professionnelle en un rien de temps.",
+          rating: 5,
+          name: "Julie Pelletier",
+          title: "eCommerce Manager",
+          company: "ShopBoost",
+          avatar: "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?w=150&h=150&fit=crop&crop=face"
+        },
+        {
+          id: 10,
+          quote: "Ce thème offre une flexibilité incroyable, la personnalisation est sans fin.",
+          rating: 5,
+          name: "Bruno Lefèvre",
+          title: "Développeur Frontend",
+          company: "CodeCraft",
+          avatar: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=150&h=150&fit=crop&crop=face"
+        },
+        {
+          id: 11,
+          quote: "La simplicité et l'efficacité de Mercure ont facilité notre transition vers la vente en ligne.",
+          rating: 5,
+          name: "Nina Bertin",
+          title: "Entrepreneuse",
+          company: "GreenMarket",
+          avatar: "https://images.unsplash.com/photo-1489515217751-5fd1be406fef?w=150&h=150&fit=crop&crop=face"
+        },
+        {
+          id: 12,
+          quote: "Un design moderne et une ergonomie exceptionnelle, Mercure est vraiment à la hauteur de nos attentes.",
+          rating: 5,
+          name: "Cédric Fabre",
+          title: "Chef de Produit",
+          company: "DigitalDesigns",
+          avatar: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=150&h=150&fit=crop&crop=face"
         }
       ]
     }

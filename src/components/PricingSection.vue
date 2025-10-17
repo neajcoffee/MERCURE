@@ -20,7 +20,7 @@
           <button class="toggle-btn" :class="{ 'toggle-btn--active': billingCycle === 'yearly' }"
             @click="billingCycle = 'yearly'">
             Annuel
-            <span class="discount-badge">-20%</span>
+            <span class="discount-badge">-15%</span>
           </button>
         </div>
       </div>
@@ -72,7 +72,7 @@ export default {
           "updatedAt": "2025-08-03T14:54:18.996Z",
           "__v": 0,
           "features": [
-            "1 licence",
+            "1 boutique connectée",
             "Toutes les fonctionnalités incluses",
             "Mises à jour du thème",
             "10% sur Trendtrack",
@@ -87,7 +87,7 @@ export default {
           "monthlyPrice": 19.99,
           "yearlyPrice": 203.89,
           "ctaText": "Commencez",
-          "note": "Sans engagement"
+          "note": "Annuler à tout moment"
         },
         {
           "_id": "68a986def0b2d383c9fbf992",
@@ -101,7 +101,7 @@ export default {
           "popular": true,
           "popularText": "Le plus populaire",
           "features": [
-            "3 licences",
+            "3 boutiques connectées",
             "Toutes les fonctionnalités incluses",
             "10% sur Trendtrack",
             "Lancez votre boutique pour 1€/mois",
@@ -112,7 +112,7 @@ export default {
           "monthlyPrice": 39.99,
           "yearlyPrice": 407.89,
           "ctaText": "Commencez",
-          "note": "Sans engagement"
+          "note": "Annuler à tout moment"
         },
         {
           "_id": "68a98700f0b2d383c9fbf994",
@@ -124,7 +124,7 @@ export default {
           "__v": 0,
           "max_licenses": 10,
           "features": [
-            "10 licences",
+            "10 boutiques connectées",
             "Toutes les fonctionnalités incluses",
             "Mises à jour du thème",
             "10% sur Trendtrack",
@@ -137,7 +137,7 @@ export default {
           "popularText": "Populaire",
           "yearlyPrice": 815.89,
           "ctaText": "Commencez",
-          "note": "Sans engagement",
+          "note": "annuler à tout moment",
           "monthlyPrice": 79.99,
           "stripe_product_id": "prod_Sgvh8QqnVOoktx"
         }
@@ -145,7 +145,7 @@ export default {
     }
   },
   created() {
-    this.fetchPlans()
+    // this.fetchPlans()
   },
   computed: {
     formattedPlans() {
@@ -280,9 +280,9 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #ffffffc7;
+  background: #ffffff5c;
   padding: var(--spacing-xs);
-  border-radius: var(--radius-xs);
+  border-radius: var(--radius-sm);
 }
 
 .pricing-plans {
@@ -417,8 +417,6 @@ export default {
 
   .pricing-toggle {
     flex-direction: row;
-    gap: var(--spacing-sm);
-    padding: var(--spacing-sm);
   }
 
   .checkout-loader {

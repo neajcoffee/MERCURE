@@ -160,7 +160,7 @@
         </form>
 
         <!-- Informations supplémentaires -->
-        <div class="onboarding-info">
+        <!-- <div class="onboarding-info">
           <h4>Ce qui vous attend :</h4>
           <ul>
             <li>✅ Accès immédiat à toutes les fonctionnalités de votre plan</li>
@@ -168,7 +168,7 @@
             <li>✅ Support client dédié pour vous accompagner</li>
             <li>✅ Configuration guidée de votre workspace</li>
           </ul>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -517,21 +517,47 @@ export default {
 
 .checkbox-group {
   display: flex;
-  align-items: flex-start;
-  gap: var(--spacing-sm);
+  align-items: center;
 }
 
 .checkbox-label {
-  display: flex;
-  align-items: flex-start;
+  display: flex !important;
+  align-items: center;
   gap: var(--spacing-sm);
   cursor: pointer;
   font-size: 0.9rem;
   line-height: 1.5;
+  white-space: nowrap;
 }
 
 .checkbox-label input[type="checkbox"] {
-  margin: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  display: inline-block;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"]:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.checkbox-label input[type="checkbox"]:checked:after {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 3px;
+  left: 6px;
 }
 
 .checkbox-label a {

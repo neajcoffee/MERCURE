@@ -3,7 +3,7 @@
     <div class="login-container">
       <div class="login-header">
         <h1>Connexion</h1>
-        <p>Connectez-vous à votre compte SaaS</p>
+        <p>Connectez-vous à votre compte Mercure Theme</p>
       </div>
 
       <!-- Message d'erreur global -->
@@ -13,65 +13,43 @@
 
       <form @submit.prevent="handleLogin" class="login-form">
         <div class="form-group">
-          <BaseInput
-            v-model="form.email"
-            type="email"
-            placeholder="Adresse e-mail"
-            required
-            :error="errors.email"
-            icon="✉️"
-          />
+          <BaseInput v-model="form.email" type="email" placeholder="Adresse e-mail" required :error="errors.email"
+            icon="✉️" />
         </div>
 
         <div class="form-group">
-          <BaseInput
-            v-model="form.password"
-            type="password"
-            placeholder="Mot de passe"
-            required
-            :error="errors.password"
-            icon="🔒"
-          />
+          <BaseInput v-model="form.password" type="password" placeholder="Mot de passe" required
+            :error="errors.password" icon="🔒" />
         </div>
 
         <div class="form-options">
-          <label class="checkbox-wrapper">
-            <input
-              v-model="form.rememberMe"
-              type="checkbox"
-              class="checkbox"
-            >
+          <!-- <label class="checkbox-wrapper">
+            <input v-model="form.rememberMe" type="checkbox" class="checkbox">
             <span class="checkmark"></span>
             Se souvenir de moi
-          </label>
+          </label> -->
 
           <router-link to="/forgot-password" class="forgot-link">
             Mot de passe oublié ?
           </router-link>
         </div>
 
-        <BaseButton
-          type="submit"
-          variant="primary"
-          :loading="isLoading"
-          :disabled="isLoading"
-          block
-        >
+        <BaseButton type="submit" variant="primary" :loading="isLoading" :disabled="isLoading" block>
           Se connecter
         </BaseButton>
       </form>
 
-      <div class="login-footer">
+      <!-- <div class="login-footer">
         <p>
           Pas encore de compte ?
           <router-link to="/signup" class="signup-link">
             Créer un compte
           </router-link>
         </p>
-      </div>
+      </div> -->
 
       <!-- Demo credentials -->
-      <div class="demo-section">
+      <!-- <div class="demo-section">
         <h3>Compte de démonstration</h3>
         <p>Email: madoudbj@gmail.com</p>
         <p>Mot de passe: azazazaz</p>
@@ -82,7 +60,7 @@
         >
           Utiliser les identifiants de démo
         </BaseButton>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -98,7 +76,7 @@ export default {
     BaseInput,
     BaseButton
   },
-  
+
   data() {
     return {
       form: {
@@ -110,31 +88,31 @@ export default {
       errorMessage: ''
     }
   },
-  
+
   computed: {
     ...mapGetters(['isLoading'])
   },
-  
+
   methods: {
     ...mapActions('auth', ['login']),
-    
+
     async handleLogin() {
       // Réinitialiser les erreurs
       this.errors = {}
       this.errorMessage = ''
-      
+
       // Validation côté client
       if (!this.validateForm()) {
         return
       }
-      
+
       try {
         await this.login({
           email: this.form.email,
           password: this.form.password,
           rememberMe: this.form.rememberMe
         })
-        
+
         // Redirection vers le tableau de bord
         this.$router.push('/dashboard')
       } catch (error) {
@@ -143,10 +121,10 @@ export default {
         console.error('Erreur de connexion:', error)
       }
     },
-    
+
     validateForm() {
       let isValid = true
-      
+
       if (!this.form.email) {
         this.errors.email = 'L\'email est requis'
         isValid = false
@@ -154,7 +132,7 @@ export default {
         this.errors.email = 'Format d\'email invalide'
         isValid = false
       }
-      
+
       if (!this.form.password) {
         this.errors.password = 'Le mot de passe est requis'
         isValid = false
@@ -162,15 +140,15 @@ export default {
         this.errors.password = 'Le mot de passe doit contenir au moins 6 caractères'
         isValid = false
       }
-      
+
       return isValid
     },
-    
+
     isValidEmail(email) {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
       return emailRegex.test(email)
     },
-    
+
     fillDemoCredentials() {
       this.form.email = 'madoudbj@gmail.com'
       this.form.password = 'azazazaz'
@@ -186,7 +164,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--background-color);
   padding: 1rem;
 }
 
@@ -197,6 +175,7 @@ export default {
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 420px;
+  color: #232323;
 }
 
 .login-header {
@@ -207,7 +186,7 @@ export default {
 .login-header h1 {
   font-size: 2rem;
   font-weight: 700;
-  color: #2d3748;
+  color: var(--landing-color-accent);
   margin-bottom: 0.5rem;
 }
 
@@ -217,7 +196,7 @@ export default {
 }
 
 .error-message {
-  background: #fed7d7;
+  background: var(--landing-color-error);
   color: #c53030;
   padding: 0.75rem;
   border-radius: 8px;
@@ -227,11 +206,11 @@ export default {
 }
 
 .login-form {
-  margin-bottom: 1.5rem;
+  /* margin-bottom: 1.5rem; */
 }
 
 .form-group {
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
 }
 
 .form-options {
@@ -254,7 +233,7 @@ export default {
 }
 
 .forgot-link {
-  color: #4299e1;
+  color: var(--landing-color-accent);
   text-decoration: none;
 }
 
@@ -309,7 +288,7 @@ export default {
   .login-container {
     padding: 1.5rem;
   }
-  
+
   .form-options {
     flex-direction: column;
     align-items: flex-start;

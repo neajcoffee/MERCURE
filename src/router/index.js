@@ -35,12 +35,11 @@ const routes = [
     component: SignupView,
     // meta: { requiresGuest: true }
   },
-  {
-    path: '/signup-old',
-    name: 'SignupOld',
-    component: Signup,
-    // meta: { requiresGuest: true }
-  },
+  // {
+  //   path: '/signup-old',
+  //   name: 'SignupOld',
+  //   component: Signup,
+  // },
   {
     path: '/payment/success',
     name: 'PaymentSuccess',

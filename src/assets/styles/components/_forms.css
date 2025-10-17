@@ -5,7 +5,7 @@
 /* 1. Styles de base pour les formulaires */
 form {
     max-width: 100%;
-    margin-bottom: var(--spacing-lg);
+    /* margin-bottom: var(--spacing-lg); */
   }
   
   /* ========================================

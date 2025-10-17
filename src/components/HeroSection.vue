@@ -2,13 +2,13 @@
   <section class="hero-section">
     <div class="marquee-banner">
       <div class="marquee-text"><span class="marquee-item">AUCUN FRAIS MENSUEL</span><span class="marquee-item">AUCUN
-          CODE REQUIS</span><span class="marquee-item">120+ FONCTIONNALITÉS</span><span class="marquee-item">AUCUN
+          CODE REQUIS</span><span class="marquee-item">120+ FONCTIONNALITÉS & APP</span><span class="marquee-item">AUCUN
           FRAIS MENSUEL</span><span class="marquee-item">AUCUN CODE REQUIS</span><span class="marquee-item">120+
-          FONCTIONNALITÉS</span><span class="marquee-item">AUCUN FRAIS MENSUEL</span><span class="marquee-item">AUCUN
-          CODE REQUIS</span><span class="marquee-item">120+ FONCTIONNALITÉS</span><span class="marquee-item">AUCUN
+          FONCTIONNALITÉS & APP</span><span class="marquee-item">AUCUN FRAIS MENSUEL</span><span class="marquee-item">AUCUN
+          CODE REQUIS</span><span class="marquee-item">120+ FONCTIONNALITÉS & APP</span><span class="marquee-item">AUCUN
           FRAIS MENSUEL</span><span class="marquee-item">AUCUN CODE REQUIS</span><span class="marquee-item">120+
-          FONCTIONNALITÉS</span><span class="marquee-item">AUCUN FRAIS MENSUEL</span><span class="marquee-item">AUCUN
-          CODE REQUIS</span><span class="marquee-item">120+ FONCTIONNALITÉS</span></div>
+          FONCTIONNALITÉS & APP</span><span class="marquee-item">AUCUN FRAIS MENSUEL</span><span class="marquee-item">AUCUN
+          CODE REQUIS</span><span class="marquee-item">120+ FONCTIONNALITÉS & APP</span></div>
     </div>
 
     <!-- Fond animé (étoiles) -->
@@ -108,8 +108,8 @@
           <!-- From Uiverse.io by MuhammadHasann -->
 
 
-          <router-link to="/signup">
-            <BtnStar @click="onPrimaryClick">Commencer aujourd'hui</BtnStar>
+          <router-link>
+            <BtnStar @click="scrollToPricing">Commencer aujourd'hui</BtnStar>
             <!-- <span class="btn-arrow">→</span> -->
           </router-link>
           <!-- <button class="hero-btn hero-btn--secondary" @click="playDemo">
@@ -252,7 +252,12 @@ export default {
     onPrimaryClick() {
       console.log('BtnStar cliqué')
     },
-
+    scrollToPricing() {
+      const pricingSection = document.querySelector('#pricing');
+      if (pricingSection) {
+        pricingSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    },
   }
 }
 </script>

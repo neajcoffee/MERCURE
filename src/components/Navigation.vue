@@ -16,6 +16,7 @@
         <a href="#pricing" class="nav-link">Tarifs</a>
         <a href="#testimonials" class="nav-link">Témoignages</a>
         <a href="#faq" class="nav-link">FAQ</a>
+        <router-link to="/login" class="nav-link">Connexion</router-link>
       </div>
 
       <!-- CTA Buttons -->
