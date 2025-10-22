@@ -4,10 +4,12 @@
       <div class="marquee-text"><span class="marquee-item">AUCUN FRAIS MENSUEL</span><span class="marquee-item">AUCUN
           CODE REQUIS</span><span class="marquee-item">120+ FONCTIONNALITÉS & APP</span><span class="marquee-item">AUCUN
           FRAIS MENSUEL</span><span class="marquee-item">AUCUN CODE REQUIS</span><span class="marquee-item">120+
-          FONCTIONNALITÉS & APP</span><span class="marquee-item">AUCUN FRAIS MENSUEL</span><span class="marquee-item">AUCUN
+          FONCTIONNALITÉS & APP</span><span class="marquee-item">AUCUN FRAIS MENSUEL</span><span
+          class="marquee-item">AUCUN
           CODE REQUIS</span><span class="marquee-item">120+ FONCTIONNALITÉS & APP</span><span class="marquee-item">AUCUN
           FRAIS MENSUEL</span><span class="marquee-item">AUCUN CODE REQUIS</span><span class="marquee-item">120+
-          FONCTIONNALITÉS & APP</span><span class="marquee-item">AUCUN FRAIS MENSUEL</span><span class="marquee-item">AUCUN
+          FONCTIONNALITÉS & APP</span><span class="marquee-item">AUCUN FRAIS MENSUEL</span><span
+          class="marquee-item">AUCUN
           CODE REQUIS</span><span class="marquee-item">120+ FONCTIONNALITÉS & APP</span></div>
     </div>
 
@@ -122,19 +124,19 @@
       <div class="hero-stats">
         <div class="stat-item">
           <div class="stat-number" :class="{ 'blur-active': isAnimating }" :style="blurStyle">{{ animatedStats.clients
-          }}/5</div>
+            }}/5</div>
           <div class="stat-label">NOTE MOYENNE</div>
           <Activity class="hero-icon" />
         </div>
         <div class="stat-item">
           <div class="stat-number" :class="{ 'blur-active': isAnimating }" :style="blurStyle">{{ animatedStats.features
-          }} K+</div>
+            }} K+</div>
           <div class="stat-label">CLIENTS SATISFAITS</div>
           <Activity class="hero-icon" />
         </div>
         <div class="stat-item">
           <div class="stat-number" :class="{ 'blur-active': isAnimating }" :style="blurStyle">{{ animatedStats.support
-          }} %</div>
+            }} %</div>
           <div class="stat-label">TAUX DE RETENTION</div>
           <Activity class="hero-icon" />
         </div>
@@ -335,9 +337,11 @@ export default {
   align-items: center;
   justify-content: center;
   gap: var(--spacing-sm);
-  background-color: #ffffff0d;
-  /* border: solid 1px #ffffff14; */
-  box-shadow: var(--shadow-soft), 0px 1px 8px #00000029;
+  backdrop-filter: blur(1px);
+  background-color: #ffffff0a;
+  /* border: solid 1px var(--landing-color-accent); */
+  border: solid #ffffff08 1px;
+  box-shadow: var(--shadow-soft), 0px 1px 2px 0px #00000029;
   padding: var(--spacing-xs);
   padding-right: var(--spacing-md);
   border-radius: var(--radius-xs);
@@ -884,7 +888,7 @@ export default {
   }
 
   50% {
-    transform: translate3d(0, -12px, 0) rotate(6deg) scale(1.04);
+    transform: translate3d(0, -30px, 0) rotate(6deg) scale(1.04);
   }
 
   100% {
@@ -896,7 +900,7 @@ export default {
 
   0%,
   100% {
-    opacity: 0.6;
+    opacity: 0.9;
   }
 
   50% {

@@ -25,7 +25,7 @@
             Questions <span class="landing-section-title-highlight">fréquentes</span>
           </h2>
           <p class="landing-section-subtitle">
-            Tout ce que vous devez savoir sur Stella
+            Tout ce que vous devez savoir sur Mercure
           </p>
         </div>
 
@@ -68,50 +68,56 @@ export default {
       faqItems: [
         {
           id: 1,
-          question: "Comment fonctionne l'essai gratuit ?",
-          answer: "L'essai gratuit de 7 jours vous donne accès à toutes les fonctionnalités de Stella. Aucune carte de crédit n'est requise pour commencer. Vous pouvez annuler à tout moment sans frais.",
+          question: "Pourquoi Mercure est le meilleur thème Shopify ?",
+          answer: "Mercure est conçu pour la performance, la flexibilité et la conversion. Il offre une vitesse de chargement exceptionnelle et des options de personnalisation avancées. De plus, il intègre une centaine d’applications prêtes à l’emploi, disponibles gratuitement !",
           isOpen: false
         },
         {
           id: 2,
-          question: "Quels sont les moyens de paiement acceptés ?",
-          answer: "Nous acceptons toutes les principales cartes de crédit (Visa, Mastercard, American Express) ainsi que les paiements par PayPal. Les factures sont générées automatiquement chaque mois ou année selon votre plan.",
+          question: "Combien de boutiques puis-je utiliser ?",
+          answer: "Le thème Mercure propose trois types de plans : Le plan Basic inclut 1 licence. Le plan Scale permet jusqu’à 3 licences. Le plan Business offre jusqu’à 10 licences.",
           isOpen: false
         },
         {
           id: 3,
           question: "Puis-je changer de plan à tout moment ?",
-          answer: "Oui, vous pouvez changer de plan à tout moment depuis votre tableau de bord. Les changements prennent effet immédiatement et sont proratisés pour le mois en cours.",
+          answer: "Oui, tu peux modifier ton plan ou ton abonnement à tout moment, selon tes besoins.",
           isOpen: false
         },
         {
           id: 4,
-          question: "Comment fonctionne l'IA intégrée ?",
-          answer: "Notre IA analyse vos habitudes de travail et automatise les tâches répétitives. Elle peut également suggérer des optimisations et générer des rapports intelligents basés sur vos données.",
+          question: "Les mises à jour sont-elles régulières ?",
+          answer: "Oui, des mises à jour régulières sont effectuées pour garantir la compatibilité avec les dernières versions de Shopify, améliorer les performances et ajouter de nouvelles fonctionnalités.",
           isOpen: false
         },
         {
           id: 5,
-          question: "Mes données sont-elles sécurisées ?",
-          answer: "Absolument. Nous utilisons un chiffrement end-to-end et respectons les normes de sécurité les plus strictes (SOC 2, GDPR). Vos données sont sauvegardées automatiquement et stockées dans des centres de données sécurisés.",
+          question: "Proposez-vous des remboursements ?",
+          answer: "Oui, nous proposons des remboursements sous certaines conditions, notamment en cas de problème technique majeur non résolu par notre support. Consulte nos conditions de remboursement pour plus de détails.",
           isOpen: false
         },
         {
           id: 6,
-          question: "Quel type de support proposez-vous ?",
-          answer: "Nous offrons un support par email, chat en direct et téléphone selon votre plan. Notre équipe est disponible 24/7 pour les plans Enterprise et répond sous 4 heures pour les autres plans.",
+          question: "Le thème s’adapte-t-il à tous les secteurs d'activité ?",
+          answer: "Absolument. Mercure est un thème polyvalent qui s’adapte à tous les types de boutiques : mode, beauté, technologie, alimentation, décoration et bien d’autres. Sa flexibilité te permet de créer un design sur mesure pour ton domaine.",
           isOpen: false
         },
         {
           id: 7,
-          question: "Puis-je exporter mes données ?",
-          answer: "Oui, vous pouvez exporter toutes vos données à tout moment dans différents formats (CSV, JSON, PDF). Nous ne verrouillons jamais vos données et vous restez propriétaire de toutes vos informations.",
+          question: "Pourquoi le thème est-il disponible en abonnement ?",
+          answer: "Le modèle par abonnement nous permet d’assurer un support client continu, des mises à jour fréquentes et l’ajout régulier de nouvelles fonctionnalités afin que ton site reste performant et à jour.",
           isOpen: false
         },
         {
           id: 8,
-          question: "Y a-t-il des limites d'utilisation ?",
-          answer: "Les limites dépendent de votre plan. Le plan Starter inclut 5 utilisateurs et 10GB de stockage, le Professional 25 utilisateurs et 100GB, et l'Enterprise offre des utilisateurs et stockage illimités.",
+          question: "Puis-je transférer les accès de mon thème sur un autre shop ?",
+          answer: "Non, la licence est liée à la boutique sur laquelle le thème a été activé. Pour un autre shop, une nouvelle licence est nécessaire.",
+          isOpen: false
+        },
+        {
+          id: 9,
+          question: "Le thème est-il optimisé pour le SEO ?",
+          answer: "Oui, Mercure est entièrement optimisé pour le SEO. Le code est propre, rapide et structuré pour une indexation optimale par les moteurs de recherche. Les balises, métadonnées et performances techniques respectent les meilleures pratiques SEO.",
           isOpen: false
         }
       ]

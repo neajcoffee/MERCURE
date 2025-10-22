@@ -16,7 +16,9 @@
         <a href="#pricing" class="nav-link">Tarifs</a>
         <a href="#testimonials" class="nav-link">Témoignages</a>
         <a href="#faq" class="nav-link">FAQ</a>
-        <router-link to="/login" class="nav-link">Connexion</router-link>
+        <div class="nav-btn-container">
+          <router-link to="/login" class="nav-link nav-btn">Connexion</router-link>
+        </div>
       </div>
 
       <!-- CTA Buttons -->
@@ -57,10 +59,10 @@ export default {
       // Vérifier si le clic est en dehors de la navigation et du bouton toggle
       const navigationLinks = document.querySelector('.navigation-links')
       const mobileToggle = document.querySelector('.mobile-menu-toggle')
-      
-      if (this.isMobileMenuOpen && 
-          !navigationLinks?.contains(event.target) && 
-          !mobileToggle?.contains(event.target)) {
+
+      if (this.isMobileMenuOpen &&
+        !navigationLinks?.contains(event.target) &&
+        !mobileToggle?.contains(event.target)) {
         this.closeMobileMenu()
       }
     }
@@ -199,6 +201,12 @@ export default {
 
 }
 
+.nav-btn {
+  background-color: white;
+  color: var(--landing-color-background-dark);
+  border-radius: var(--radius-full);
+}
+
 .nav-link:hover {
   /* color: var(--landing-color-accent-light); */
   color: var(--landing-color-accent);
@@ -208,6 +216,11 @@ export default {
   /* background-color: #ffffff29; */
   /* background-color: 
   color-mix(in srgb, var(--landing-color-accent) 10%, transparent); */
+}
+
+.nav-btn:hover {
+  background-color: var(--landing-color-accent);
+  color: var(--landing-color-background-dark)
 }
 
 /* .nav-link::after {
@@ -384,6 +397,24 @@ export default {
     flex-direction: row;
     align-items: center;
     padding: 0 var(--spacing-md);
+  }
+
+  .nav-btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    padding: var(--spacing-sm);
+    background-color: #0000000d;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .nav-btn {
+    background-color: var(--landing-color-accent);
+    border-radius: var(--radius-full);
+    padding: var(--spacing-xs) var(--spacing-md);
+    box-shadow: var(--sh-card);
   }
 }
 </style>

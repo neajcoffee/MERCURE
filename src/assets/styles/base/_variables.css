@@ -23,8 +23,8 @@
   /* -----------------------------
      Radius
   ----------------------------- */
-    --radius-xs: 0.4rem;
-    --radius-sm: 0.6rem;
+    --radius-xs: 0.3rem;
+    --radius-sm: 0.5rem;
     --radius-md: 0.9rem;
     --radius-lg: 1.1rem;
     --radius-xl: 1.5rem;

@@ -267,7 +267,7 @@ export default {
   flex-direction: column;
   align-items: center;
   gap: var(--spacing-sm);
-  background-color: #ffffff12;
+  background-color: #ffffff03;
   /* border: dashed 1px var(--landing-color-accent); */
   width: max-content;
   padding: var(--spacing-sm);
@@ -280,8 +280,9 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #ffffff5c;
-  padding: var(--spacing-xs);
+  /* background: #ffffff5c; */
+  background: var(--landing-color-accent);
+  padding: 0.2rem var(--spacing-xs);
   border-radius: var(--radius-sm);
 }
 
@@ -294,7 +295,8 @@ export default {
 
 .toggle-label {
   font-weight: 500;
-  color: var(--landing-color-accent);
+  /* color: var(--landing-color-accent); */
+  color: white;
   margin-right: var(--spacing-md);
 }
 
@@ -312,7 +314,8 @@ export default {
 .toggle-btn--active {
   background: white;
   color: var(--landing-color-text);
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--shadow-soft), 1px 5px 3px #00000021;
+  transform: rotateZ(-7deg);
 }
 
 .discount-badge {
@@ -320,6 +323,7 @@ export default {
   top: -12px;
   right: -17px;
   background: var(--landing-color-primary);
+  border: solid 1px var(--landing-color-accent);
   color: white;
   font-size: 0.75rem;
   padding: 2px 6px;
