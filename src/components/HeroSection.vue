@@ -1059,9 +1059,40 @@ export default {
 
 /* Mobile: optimisation des effets */
 @media (max-width: 768px) {
+  .hero-bg::before {
+    /* background-image: radial-gradient(circle, rgb(175 250 19 / 15%) 1px, #ffffff00 0px); */
+    background-size: 45px 45px;
+  }
 
   .bg-star {
     opacity: 0.1;
+  }
+
+  .bg-star.pos-1 {
+    top: 26%;
+    left: 22%;
+  }
+
+  .bg-star.pos-3 {
+    bottom: 40%;
+    left: 26%;
+    width: 12px;
+  }
+
+  .bg-star.pos-6 {
+    top: 57%;
+    right: 15%;
+    width: 11px;
+  }
+
+  .bg-star.pos-6 {
+    bottom: 35%;
+    right: 30%;
+    width: 16px;
+  }
+
+  .bg-star.pos-10 {
+    bottom: 19%;
   }
 
   .bg-star.pos-2,
