@@ -22,8 +22,9 @@
               class="feature-video"
               muted
               loop
-              preload="none"
+              preload="auto"
               playsinline
+              autoplay
               :poster="feature.videoPoster || null"
               aria-hidden="true"
             >
@@ -121,6 +122,10 @@ export default {
         video.setAttribute('muted', '')
         video.setAttribute('loop', '')
         video.setAttribute('playsinline', '')
+        video.autoplay = true
+        video.setAttribute('autoplay', '')
+        video.preload = 'auto'
+        video.load()
       })
 
       if (typeof window === 'undefined') {
@@ -142,12 +147,11 @@ export default {
                 video.play().catch(() => {})
               } else {
                 video.pause()
-                video.currentTime = 0
               }
             })
           },
           {
-            threshold: 0.5
+            threshold: 0.25
           }
         )
 
