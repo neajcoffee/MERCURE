@@ -1060,7 +1060,7 @@ export default {
 /* Mobile: optimisation des effets */
 @media (max-width: 768px) {
   .hero-bg::before {
-    /* background-image: radial-gradient(circle, rgb(175 250 19 / 15%) 1px, #ffffff00 0px); */
+    background-image: radial-gradient(circle, rgb(175 250 19 / 11%) 1px, #ffffff00 0px);
     background-size: 45px 45px;
   }
 
