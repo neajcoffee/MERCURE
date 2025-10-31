@@ -1059,9 +1059,6 @@ export default {
 
 /* Mobile: optimisation des effets */
 @media (max-width: 768px) {
-  .hero-bg::before {
-    opacity: 0.08;
-  }
 
   .bg-star {
     opacity: 0.1;
