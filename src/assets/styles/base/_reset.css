@@ -208,6 +208,11 @@ button, input, textarea {
   user-select: none;
 }
 
+/* 13bis. Suppression de l'effet de surbrillance au toucher sur mobile */
+a, button, input, textarea, select {
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* 14. Rendre les images et vidéos responsives */
 img, video {
   max-width: 100%;

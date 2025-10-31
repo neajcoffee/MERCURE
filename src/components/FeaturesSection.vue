@@ -17,17 +17,8 @@
             <span class="icon">{{ feature.icon }}</span>
           </div>
           <div class="feature-media" v-if="feature.videoUrl">
-            <video
-              ref="featureVideo"
-              class="feature-video"
-              muted
-              loop
-              preload="auto"
-              playsinline
-              autoplay
-              :poster="feature.videoPoster || defaultVideoPoster"
-              aria-hidden="true"
-            >
+            <video ref="featureVideo" class="feature-video" muted loop preload="auto" playsinline autoplay
+              :poster="feature.videoPoster || defaultVideoPoster" aria-hidden="true">
               <source :src="feature.videoUrl" :type="feature.videoType || 'video/mp4'" />
               Votre navigateur ne supporte pas la lecture de cette vidéo.
             </video>
@@ -132,7 +123,7 @@ export default {
 
       if (typeof window === 'undefined') {
         videos.forEach((video) => {
-          video.play().catch(() => {})
+          video.play().catch(() => { })
         })
         return
       }
@@ -146,7 +137,7 @@ export default {
               const video = entry.target
 
               if (entry.isIntersecting) {
-                video.play().catch(() => {})
+                video.play().catch(() => { })
               } else {
                 video.pause()
               }
@@ -162,7 +153,7 @@ export default {
         })
       } else {
         videos.forEach((video) => {
-          video.play().catch(() => {})
+          video.play().catch(() => { })
         })
       }
     },
@@ -183,7 +174,6 @@ export default {
 </script>
 
 <style scoped>
-
 .features-section {
   padding: var(--spacing-xs);
   background: linear-gradient(180deg, #00000063, transparent);
@@ -191,10 +181,10 @@ export default {
 
 .features-container {
   margin: 0 auto;
+  padding: var(--spacing-md);
   padding-top: var(--spacing-xxl);
   border-radius: var(--radius-xxl);
-  /* background: linear-gradient(180deg, #ffffff05 0%, transparent 30%); */
-  background: white
+  background: white;
 }
 
 .landing-section-title {
@@ -213,18 +203,16 @@ export default {
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: var(--spacing-xs);
   padding: var(--spacing-md);
-  border-radius: var(--radius-xl);
   background: #f8f9fa;
-  margin: auto;
-  /* border-radius: var(--radius-xxl); */
-  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-soft);
 }
 
 .feature-card {
   background: white;
   padding: var(--spacing-xl);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--sh-card);
   transition: all 0.3s ease;
 }
 
