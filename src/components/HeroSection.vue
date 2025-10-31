@@ -504,6 +504,7 @@ export default {
 } */
 
 .marquee-banner {
+  display: none;
   z-index: 9000;
   position: absolute;
   bottom: 0;
