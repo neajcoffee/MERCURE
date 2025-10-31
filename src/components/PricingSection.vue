@@ -301,7 +301,7 @@ export default {
   width: calc(50% - 4px);
   background: white;
   border-radius: calc(var(--radius-xs) * 1.4);
-  transition: transform 0.5s cubic-bezier(0, 0.39, 0.23, 1);
+  transition: transform 0.5s ease-out;
   z-index: 0;
   box-shadow: var(--shadow-soft);
 }
