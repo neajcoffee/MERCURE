@@ -28,9 +28,6 @@
   box-sizing: border-box;
 }
 
-html {
-  background-color: var(--background-color);
-}
 
 body {
   margin: 0;

@@ -92,13 +92,13 @@ export default {
 <style scoped>
 .btn-star {
     position: relative;
-    padding: 12px 35px;
+    padding: var(--spacing-sm) var(--spacing-lg);
     background: var(--landing-color-accent);
-    font-size: 17px;
+    font-size: var(--font-size-sm);
     font-weight: 500;
     color: #181818;
     border: 3px solid var(--landing-color-accent);
-    border-radius: var(--radius-full);
+    border-radius: var(--radius-md);
     box-shadow: 0 0 0 5px #ffffff2e, 0 0 0 5px #ffffff2e;
     transition: all 0.3s ease-in-out;
     cursor: pointer;

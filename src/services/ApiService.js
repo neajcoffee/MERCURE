@@ -38,7 +38,7 @@ class ApiService {
   setTokens(accessToken, refreshToken = null) {
     localStorage.setItem(this.accessToken, accessToken)
     if (refreshToken) {
-      localStorage.setItem(this.refreshToken, refreshToken)
+      localStorage.setItem(this.refreshTokenKey, refreshToken)
     }
   }
 

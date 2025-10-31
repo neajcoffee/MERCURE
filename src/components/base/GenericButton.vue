@@ -18,7 +18,7 @@ export default {
     variant: {
       type: String,
       default: 'primary',
-      validator: (value) => ['primary', 'secondary', 'outline', 'danger', 'success'].includes(value)
+      validator: (value) => ['primary', 'secondary', 'outline', 'danger', 'success', 'custom'].includes(value)
     },
     size: {
       type: String,
@@ -119,6 +119,12 @@ export default {
   background: #10b981;
   color: white;
   border-color: #10b981;
+}
+
+.generic-btn--custom {
+  background: var(--button-custom-bg, var(--primary-color));
+  color: var(--button-custom-color, white);
+  border-color: var(--button-custom-border, transparent);
 }
 
 /* .generic-btn--success:hover:not(:disabled) {

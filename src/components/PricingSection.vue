@@ -12,13 +12,13 @@
 
       <div class="pricing-toggle-container">
         <h4 class="toggle-label">Facturation</h4>
-        <div class="pricing-toggle">
+        <div class="pricing-toggle"><span class="toggle-indicator" :class="`toggle-indicator--${billingCycle}`"></span>
           <button class="toggle-btn" :class="{ 'toggle-btn--active': billingCycle === 'monthly' }"
-            @click="billingCycle = 'monthly'">
+            @click="switchBillingCycle('monthly')">
             Mensuel
           </button>
           <button class="toggle-btn" :class="{ 'toggle-btn--active': billingCycle === 'yearly' }"
-            @click="billingCycle = 'yearly'">
+            @click="switchBillingCycle('yearly')">
             Annuel
             <span class="discount-badge">-15%</span>
           </button>
@@ -168,6 +168,10 @@ export default {
     }
   },
   methods: {
+    switchBillingCycle(targetCycle) {
+      if (this.billingCycle === targetCycle) return
+      this.billingCycle = targetCycle
+    },
     async fetchPlans() {
       try {
         const response = await subscriptionService.getAvailablePlans()
@@ -273,17 +277,41 @@ export default {
   border-radius: var(--radius-lg);
   margin: auto;
   margin-bottom: var(--spacing-xxl);
-  box-shadow: 0px 0px 0px var(--spacing-xs) #ffffff1f;
+  box-shadow: 0px 3px 16px 1px #000f3587, 0px 3px 50px 4px #0088a58a;
 }
 
 .pricing-toggle {
-  display: flex;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
   justify-content: center;
-  /* background: #ffffff5c; */
   background: var(--landing-color-accent);
-  padding: 0.2rem var(--spacing-xs);
+  padding: 0.35rem;
   border-radius: var(--radius-sm);
+  /* overflow: hidden; */
+  box-shadow: var(--sh-card);
+}
+
+.toggle-indicator {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
+  background: white;
+  border-radius: calc(var(--radius-xs) * 1.4);
+  transition: transform 0.5s ease-in-out;
+  z-index: 0;
+  box-shadow: var(--shadow-soft);
+}
+
+.toggle-indicator--monthly {
+  transform: translateX(0);
+}
+
+.toggle-indicator--yearly {
+  transform: translateX(100%);
 }
 
 .pricing-plans {
@@ -307,16 +335,15 @@ export default {
   background: transparent;
   border-radius: var(--radius-xs);
   cursor: pointer;
-  font-weight: 500;
-  transition: all 0.2s ease;
+  font-weight: 600;
+  color: var(--landing-color-text);
+  transition: color 0.2s ease, transform 0.2s ease;
   position: relative;
+  z-index: 1;
 }
 
 .toggle-btn--active {
-  background: white;
-  color: var(--landing-color-text);
-  box-shadow: var(--shadow-soft), 1px 5px 3px #00000021;
-  transform: rotateZ(-7deg);
+  /* transform: translateY(-1px); */
 }
 
 .discount-badge {
@@ -324,12 +351,13 @@ export default {
   top: -12px;
   right: -17px;
   background: var(--landing-color-primary);
-  border: solid 1px var(--landing-color-accent);
+  /* border: solid 1px var(--landing-color-accent); */
   color: white;
   font-size: 0.75rem;
   padding: 2px 6px;
   border-radius: var(--radius-xs);
   font-weight: 600;
+  z-index: 2;
 }
 
 .pricing-note {
@@ -410,6 +438,7 @@ export default {
     transform: rotate(360deg);
   }
 }
+
 
 /* Responsive */
 @media (max-width: 768px) {

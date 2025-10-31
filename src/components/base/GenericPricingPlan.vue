@@ -34,14 +34,23 @@
 
         <!-- Prix -->
         <div class="pricing-price">
-          <div class="pricing-price-main">
-            <span class="pricing-currency">{{ plan.currency || '€' }}</span>
-            <span class="pricing-amount">{{ plan.price }}</span>
-            <span v-if="plan.period" class="pricing-period">/ {{ plan.period }}</span>
-          </div>
-          <div v-if="plan.originalPrice" class="pricing-original-price">
-            {{ plan.currency || '€' }}{{ plan.originalPrice }}
-          </div>
+          <TransitionGroup name="price-change" tag="div" class="pricing-price-main">
+            <span class="pricing-currency" :key="`currency-${plan.currency || '€'}`">
+              {{ plan.currency || '€' }}
+            </span>
+            <span class="pricing-amount" :key="`amount-${plan.id || index}-${plan.price}`">
+              {{ plan.price }}
+            </span>
+            <span v-if="plan.period" class="pricing-period" :key="`period-${plan.id || index}-${plan.period}`">
+              / {{ plan.period }}
+            </span>
+          </TransitionGroup>
+          <Transition name="price-fade" mode="out-in">
+            <div v-if="plan.originalPrice" class="pricing-original-price"
+              :key="`original-${plan.id || index}-${plan.originalPrice}`">
+              {{ plan.currency || '€' }}{{ plan.originalPrice }}
+            </div>
+          </Transition>
         </div>
 
         <!-- Fonctionnalités -->
@@ -241,11 +250,6 @@ export default {
   flex-direction: column;
 }
 
-.pricing-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-soft);
-}
-
 .pricing-card--popular {
   border-color: v-bind(themeColor);
   border-width: 2px;
@@ -396,14 +400,45 @@ export default {
   font-size: var(--font-size-md);
 }
 
+/* Animations du changement de prix */
+.price-change-enter-active,
+.price-change-leave-active {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.price-change-enter-from,
+.price-change-leave-to {
+  opacity: 0;
+  transform: translateY(0.5rem);
+}
+
+.price-change-leave-active {
+  position: absolute;
+}
+
+.price-change-move {
+  transition: transform 0.3s ease;
+}
+
+.price-fade-enter-active,
+.price-fade-leave-active {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.price-fade-enter-from,
+.price-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-0.5rem);
+}
+
 /* Styles pour le bouton personnalisé avec la couleur du thème */
-:deep(.pricing-button.btn--custom) {
+::deep(.pricing-button.generic-btn--custom) {
   background-color: v-bind(themeColor);
   border-color: v-bind(themeColor);
   color: white;
 }
 
-:deep(.pricing-button.btn--custom:hover) {
+::deep(.pricing-button.generic-btn--custom:hover) {
   background-color: v-bind('`${themeColor}dd`');
   border-color: v-bind('`${themeColor}dd`');
   transform: translateY(-2px);
@@ -446,22 +481,6 @@ export default {
 @media (min-width: 1024px) {
   .pricing-grid {
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  .pricing-card--popular {
-    transform: scale(1.04);
-  }
-
-  .pricing-card--popular:hover {
-    transform: scale(1.05) translateY(-4px);
-  }
-
-  .pricing-card--current {
-    transform: scale(1.02);
-  }
-
-  .pricing-card--current:hover {
-    transform: scale(1.03) translateY(-2px);
   }
 }
 

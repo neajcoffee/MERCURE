@@ -112,19 +112,28 @@ const actions = {
   },
   
   async initializeAuth({ commit, state }) {
-    if (state.accessToken) {
-      try {
-        const response = await authService.getCurrentUser()
-        const user = response.customer
+    if (!state.accessToken) {
+      commit('SET_AUTHENTICATED', false)
+      return
+    }
+
+    try {
+      const response = await authService.getCurrentUser()
+      const user = response?.customer ?? response?.user ?? response?.admin ?? response ?? null
+
+      if (user) {
         commit('SET_USER', user)
         commit('SET_AUTHENTICATED', true)
-      } catch (error) {
-        // Token invalide, nettoyer
+      } else {
         commit('SET_USER', null)
-        commit('SET_TOKEN', null)
-        commit('SET_REFRESH_TOKEN', null)
         commit('SET_AUTHENTICATED', false)
       }
+    } catch (error) {
+      // Token invalide ou profil inaccessible, nettoyer
+      commit('SET_USER', null)
+      commit('SET_TOKEN', null)
+      commit('SET_REFRESH_TOKEN', null)
+      commit('SET_AUTHENTICATED', false)
     }
   }
 }

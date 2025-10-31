@@ -11,13 +11,21 @@
       </div>
 
       <div class="selling-points-grid">
-        <ArgumentCard
+        <!-- <ArgumentCard
           class="selling-point-card"
           :title="comparison.title"
           :subtitle="comparison.subtitle"
           :description="comparison.description"
           :icon="comparison.icon"
           :eyebrow="comparison.eyebrow"
+          :variant="comparison.variant"
+          :pros-title="comparison.prosTitle"
+          :cons-title="comparison.consTitle"
+          :pros="comparison.pros"
+          :cons="comparison.cons"
+        /> -->
+        <ArgumentCard
+          class="selling-point-card"
           :variant="comparison.variant"
           :pros-title="comparison.prosTitle"
           :cons-title="comparison.consTitle"
