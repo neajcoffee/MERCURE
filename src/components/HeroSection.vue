@@ -110,7 +110,7 @@
           <!-- From Uiverse.io by MuhammadHasann -->
 
 
-            <BtnStar @click="scrollToPricing">Commencer aujourd'hui</BtnStar>
+          <BtnStar @click="scrollToPricing">Commencer aujourd'hui</BtnStar>
 
           <!-- <button class="hero-btn hero-btn--secondary" @click="playDemo">
             <span class="play-icon">▶</span>
@@ -152,9 +152,9 @@
         </div>
         <div class="stat-item">
           <div class="stat-number">98 %</div>
-        <div class="stat-label">TAUX DE RETENTION</div>
-        <Activity class="hero-icon" />
-      </div>
+          <div class="stat-label">TAUX DE RETENTION</div>
+          <Activity class="hero-icon" />
+        </div>
       </div>
 
       <!-- <div class="hero-visual">
@@ -281,7 +281,7 @@ export default {
       const timeout = new Promise((resolve) => setTimeout(resolve, 2000))
 
       return Promise.race([
-        Promise.all(fontPromises).catch(() => {}),
+        Promise.all(fontPromises).catch(() => { }),
         timeout
       ])
     },
@@ -385,6 +385,7 @@ export default {
 } */
 
 .hero-container {
+  height: 70vh;
   width: 100%;
   margin: 0 auto;
   /* padding-top: var(--spacing-lg); */
@@ -396,6 +397,7 @@ export default {
   z-index: 1;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 
 .hero-content {
@@ -475,6 +477,7 @@ export default {
 
 
 .hero-description {
+  margin-bottom: var(--spacing-xxl);
   font-size: var(--font-size-sm);
   line-height: 1.6;
   margin-bottom: var(--spacing-xl);
