@@ -430,6 +430,8 @@ export default {
   opacity: 1;
   transform: translateY(0);
   transition-delay: 0.2s;
+  animation: hero-badge-float 7s linear 0.7s infinite alternate;
+  animation-fill-mode: both;
 }
 
 .hero-content--visible .hero-title {
@@ -468,6 +470,7 @@ export default {
   width: fit-content;
   margin: auto;
   margin-bottom: var(--spacing-xl);
+  will-change: transform;
 }
 
 .badge-icon {
@@ -1031,6 +1034,20 @@ export default {
   width: 16px;
   animation-duration: 26s, 8.2s;
   animation-delay: 1s, 1.4s;
+}
+
+@keyframes hero-badge-float {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(6px, -13px, 0);
+  }
+
+  100% {
+    transform: translate3d(10px, -8px, 0);
+  }
 }
 
 @keyframes float {

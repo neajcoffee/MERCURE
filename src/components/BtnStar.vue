@@ -99,7 +99,7 @@ export default {
     color: #181818;
     border: 3px solid var(--landing-color-accent);
     border-radius: var(--radius-md);
-    box-shadow: 0 0 0 5px #ffffff2e, 0 0 0 5px #ffffff2e;
+    box-shadow: var(--shadow-soft), 0px 0px 0px 3px #ffffff26;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
 }

@@ -234,26 +234,26 @@ export default {
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: var(--spacing-md);
+  /* gap: var(--spacing-xs); */
   margin-bottom: var(--spacing-xl);
 }
 
 .pricing-card {
   background: white;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-lg);
   padding: var(--spacing-xl);
   padding-bottom: var(--spacing-xs);
   position: relative;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
+  transform: scale(0.96);
 }
 
 .pricing-card--popular {
-  border-color: v-bind(themeColor);
-  border-width: 2px;
-  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.15);
+  box-shadow: 0px 9px 9px 0px #000f3552, 0px 3px 50px 4px #0088a58a, inset 0px 0px 0px 5px v-bind(themeColor), inset 0px 1px 2px 5px #00172b6b;
+  z-index: 2;
+  transform: scale(1);
 }
 
 .pricing-card--current {
@@ -272,13 +272,14 @@ export default {
   top: -12px;
   left: 50%;
   transform: translateX(-50%);
-  background: v-bind(themeColor);
-  color: white;
+  background: var(--e9596db7-themeColor);
+  /* color: white; */
   padding: var(--spacing-xs) var(--spacing-md);
-  border-radius: var(--radius-xs);
+  border-radius: var(--radius-md);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
   white-space: nowrap;
+  box-shadow: 0px 1px 2px 0px #00172b6b;
 }
 
 .pricing-badge--current {
@@ -466,6 +467,7 @@ export default {
 
   .pricing-card {
     padding: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
   }
 
   .pricing-amount {
