@@ -15,7 +15,58 @@
 
     <!-- Fond animé (étoiles) -->
     <!-- Fond animé (étoiles) -->
-    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-bg" aria-hidden="true">
+      <svg class="bg-star pos-1 glow" viewBox="0 0 784.11 815.53" xmlns="http://www.w3.org/2000/svg">
+        <path class="bg-star-path"
+          d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+        </path>
+      </svg>
+      <svg class="bg-star pos-2 glow" viewBox="0 0 784.11 815.53" xmlns="http://www.w3.org/2000/svg">
+        <path class="bg-star-path"
+          d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+        </path>
+      </svg>
+      <svg class="bg-star pos-3 glow" viewBox="0 0 784.11 815.53" xmlns="http://www.w3.org/2000/svg">
+        <path class="bg-star-path"
+          d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+        </path>
+      </svg>
+      <svg class="bg-star pos-4 glow" viewBox="0 0 784.11 815.53" xmlns="http://www.w3.org/2000/svg">
+        <path class="bg-star-path"
+          d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+        </path>
+      </svg>
+      <svg class="bg-star pos-5 glow" viewBox="0 0 784.11 815.53" xmlns="http://www.w3.org/2000/svg">
+        <path class="bg-star-path"
+          d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+        </path>
+      </svg>
+      <svg class="bg-star pos-6 glow" viewBox="0 0 784.11 815.53" xmlns="http://www.w3.org/2000/svg">
+        <path class="bg-star-path"
+          d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+        </path>
+      </svg>
+      <svg class="bg-star pos-7 glow" viewBox="0 0 784.11 815.53" xmlns="http://www.w3.org/2000/svg">
+        <path class="bg-star-path"
+          d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+        </path>
+      </svg>
+      <svg class="bg-star pos-8 glow" viewBox="0 0 784.11 815.53" xmlns="http://www.w3.org/2000/svg">
+        <path class="bg-star-path"
+          d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+        </path>
+      </svg>
+      <svg class="bg-star pos-9 glow" viewBox="0 0 784.11 815.53" xmlns="http://www.w3.org/2000/svg">
+        <path class="bg-star-path"
+          d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+        </path>
+      </svg>
+      <svg class="bg-star pos-10 glow" viewBox="0 0 784.11 815.53" xmlns="http://www.w3.org/2000/svg">
+        <path class="bg-star-path"
+          d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+        </path>
+      </svg>
+    </div>
 
     <div class="hero-container">
       <div :class="['hero-content', { 'hero-content--visible': isLoaded }]">
@@ -864,9 +915,106 @@ export default {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(color-mix(in srgb, var(--landing-color-accent) 35%, transparent) 1px, transparent 1px);
-  background-size: 26px 26px;
-  opacity: 0.12;
+  background-image: radial-gradient(circle, rgb(175 250 19 / 21%) 1px, #ffffff00 0px);
+  background-size: 55px 55px;
+  background-position: center;
+}
+
+.bg-star {
+  position: absolute;
+  color: var(--landing-color-accent);
+  opacity: 0.7;
+  animation: float 18s ease-in-out infinite, twinkle 7s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.bg-star.glow {
+  filter: drop-shadow(0 0 6px currentColor) drop-shadow(0 0 12px currentColor) drop-shadow(0 0 24px currentColor) blur(1px);
+  mix-blend-mode: screen;
+}
+
+.bg-star-path {
+  fill: currentColor;
+}
+
+/* Positions & tailles optimisées */
+.bg-star.pos-1 {
+  top: 16%;
+  left: 12%;
+  width: 18px;
+  animation-duration: 18s, 7s;
+}
+
+.bg-star.pos-2 {
+  top: 35%;
+  right: 12%;
+  width: 24px;
+  animation-duration: 22s, 6.5s;
+  animation-delay: .8s, .5s;
+}
+
+.bg-star.pos-3 {
+  bottom: 18%;
+  left: 20%;
+  width: 20px;
+  animation-duration: 20s, 8s;
+  animation-delay: .3s, 1.2s;
+}
+
+.bg-star.pos-4 {
+  top: 22%;
+  left: 35%;
+  width: 14px;
+  animation-duration: 24s, 7.5s;
+  animation-delay: 1.2s, .2s;
+}
+
+.bg-star.pos-5 {
+  top: 65%;
+  left: 15%;
+  width: 22px;
+  animation-duration: 19s, 6.8s;
+  animation-delay: .6s, .4s;
+}
+
+.bg-star.pos-6 {
+  top: 75%;
+  right: 22%;
+  width: 16px;
+  animation-duration: 23s, 8.5s;
+  animation-delay: .4s, 1s;
+}
+
+.bg-star.pos-7 {
+  top: 28%;
+  right: 28%;
+  width: 12px;
+  animation-duration: 21s, 7.2s;
+  animation-delay: .2s, .6s;
+}
+
+.bg-star.pos-8 {
+  bottom: 25%;
+  right: 35%;
+  width: 20px;
+  animation-duration: 25s, 7.8s;
+  animation-delay: 1.6s, .3s;
+}
+
+.bg-star.pos-9 {
+  top: 45%;
+  left: 40%;
+  width: 14px;
+  animation-duration: 20s, 6.6s;
+  animation-delay: .1s, .9s;
+}
+
+.bg-star.pos-10 {
+  bottom: 15%;
+  left: 15%;
+  width: 16px;
+  animation-duration: 26s, 8.2s;
+  animation-delay: 1s, 1.4s;
 }
 
 @keyframes hero-badge-float {
@@ -883,9 +1031,47 @@ export default {
   }
 }
 
+@keyframes float {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: translate3d(0, -30px, 0) rotate(6deg) scale(1.04);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes twinkle {
+
+  0%,
+  100% {
+    opacity: 0.9;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+}
+
+/* Mobile: optimisation des effets */
 @media (max-width: 768px) {
   .hero-bg::before {
     opacity: 0.08;
+  }
+
+  .bg-star {
+    opacity: 0.1;
+  }
+
+  .bg-star.pos-2,
+  .bg-star.pos-5,
+  .bg-star.pos-7,
+  .bg-star.pos-9 {
+    display: none;
   }
 }
 </style>
