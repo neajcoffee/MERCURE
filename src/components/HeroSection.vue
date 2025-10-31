@@ -112,6 +112,18 @@
 
           <BtnStar @click="scrollToPricing">Commencer aujourd'hui</BtnStar>
 
+          <button
+            type="button"
+            class="hero-vibration-btn"
+            @click="triggerVibration"
+          >
+            Tester la vibration mobile
+          </button>
+
+          <p v-if="vibrationMessage" class="hero-vibration-feedback">
+            {{ vibrationMessage }}
+          </p>
+
           <!-- <button class="hero-btn hero-btn--secondary" @click="playDemo">
             <span class="play-icon">▶</span>
             Voir la démo
@@ -218,7 +230,10 @@ export default {
       },
       isAnimating: true,
       animationProgress: 0,
-      statsTimer: null
+      statsTimer: null,
+      vibrationSupported: false,
+      vibrationMessage: '',
+      vibrationMessageTimeout: null
     }
   },
   computed: {
@@ -234,14 +249,20 @@ export default {
     }
   },
   mounted() {
+    if (typeof navigator !== 'undefined' && typeof navigator.vibrate === 'function') {
+      this.vibrationSupported = true
+    }
+
     this.prepareHero()
   },
   beforeUnmount() {
     this.clearStatsTimer()
+    this.clearVibrationMessageTimer()
   },
   // Vue 2 fallback
   beforeDestroy() {
     this.clearStatsTimer()
+    this.clearVibrationMessageTimer()
   },
   methods: {
     async prepareHero() {
@@ -329,6 +350,48 @@ export default {
     },
     onPrimaryClick() {
       console.log('BtnStar cliqué')
+    },
+    triggerVibration() {
+      const unsupportedMessage = 'La vibration n\'est pas disponible sur cet appareil.'
+
+      if (typeof navigator === 'undefined' || typeof navigator.vibrate !== 'function') {
+        this.vibrationSupported = false
+        this.setVibrationMessage(unsupportedMessage)
+        return
+      }
+
+      let didVibrate = false
+
+      try {
+        didVibrate = navigator.vibrate([45, 30, 45])
+      } catch (error) {
+        console.warn('Vibration API error:', error)
+        this.setVibrationMessage('Impossible de déclencher la vibration.')
+        return
+      }
+
+      if (didVibrate === false) {
+        this.setVibrationMessage('La vibration est peut-être bloquée par le navigateur.')
+      } else {
+        this.setVibrationMessage('Vibration envoyée ✅')
+      }
+    },
+    setVibrationMessage(message) {
+      this.vibrationMessage = message
+      this.clearVibrationMessageTimer()
+
+      if (typeof window !== 'undefined' && typeof window.setTimeout === 'function') {
+        this.vibrationMessageTimeout = window.setTimeout(() => {
+          this.vibrationMessage = ''
+          this.vibrationMessageTimeout = null
+        }, 2600)
+      }
+    },
+    clearVibrationMessageTimer() {
+      if (this.vibrationMessageTimeout) {
+        clearTimeout(this.vibrationMessageTimeout)
+        this.vibrationMessageTimeout = null
+      }
     },
     scrollToPricing() {
       const pricingSection = document.querySelector('#pricing');
@@ -497,6 +560,41 @@ export default {
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
+}
+
+.hero-vibration-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  margin-top: var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--landing-color-text-white);
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.hero-vibration-btn:active {
+  transform: scale(0.97);
+}
+
+.hero-vibration-feedback {
+  margin-top: var(--spacing-xs);
+  font-size: var(--font-size-xs);
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+  max-width: 240px;
+}
+
+@media (hover: hover) {
+  .hero-vibration-btn:hover {
+    background: rgba(255, 255, 255, 0.18);
+  }
 }
 
 .hero-btn {
@@ -1054,6 +1152,13 @@ export default {
 
   50% {
     opacity: 0.2;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-vibration-btn,
+  .hero-vibration-feedback {
+    display: none;
   }
 }
 

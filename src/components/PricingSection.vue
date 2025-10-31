@@ -170,8 +170,6 @@ export default {
   methods: {
     switchBillingCycle(targetCycle) {
       if (this.billingCycle === targetCycle) return
-
-      this.triggerPricingToggleHaptic()
       this.billingCycle = targetCycle
     },
     async fetchPlans() {
@@ -221,14 +219,6 @@ export default {
         this.$toast.error(errorMessage)
       } else {
         alert(errorMessage)
-      }
-    },
-    triggerPricingToggleHaptic() {
-      if (typeof window === 'undefined') return
-
-      const vibrationApi = window.navigator && window.navigator.vibrate
-      if (typeof vibrationApi === 'function') {
-        vibrationApi.call(window.navigator, 35)
       }
     }
   }
@@ -353,7 +343,7 @@ export default {
 }
 
 .toggle-btn--active {
-  color: var(--landing-color-primary);
+  /* transform: translateY(-1px); */
 }
 
 .discount-badge {
