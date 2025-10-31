@@ -25,10 +25,10 @@
         </div>
       </div>
 
-      <GenericPricingPlan class="pricing-plans" title="" subtitle="" :plans="formattedPlans" theme-color="var(--landing-color-primary)"
-        @plan-selected="handlePlanSelection">
+      <GenericPricingPlan class="pricing-plans" title="" subtitle="" :plans="formattedPlans"
+        theme-color="var(--landing-color-primary)" @plan-selected="handlePlanSelection">
         <!-- <template #footer> -->
-          <!-- <div class="pricing-note">
+        <!-- <div class="pricing-note">
             <p>
               * Faut trouver un truc à dire ici.
             </p>
@@ -267,13 +267,13 @@ export default {
   flex-direction: column;
   align-items: center;
   gap: var(--spacing-sm);
-  background-color: #ffffff03;
-  /* border: dashed 1px var(--landing-color-accent); */
+  background-color: #ffffff;
   width: max-content;
-  padding: var(--spacing-sm);
-  border-radius: var(--radius-sm);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-lg);
   margin: auto;
   margin-bottom: var(--spacing-xl);
+  box-shadow: 0px 0px 0px var(--spacing-xs) #ffffff1f;
 }
 
 .pricing-toggle {
@@ -296,7 +296,8 @@ export default {
 .toggle-label {
   font-weight: 500;
   /* color: var(--landing-color-accent); */
-  color: white;
+  /* color: white; */
+  color: var(--landing-color-text);
   margin-right: var(--spacing-md);
 }
 

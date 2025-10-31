@@ -18,6 +18,10 @@
     <!-- FAQ Section -->
     <FAQSection />
     
+    
+        <!-- Pourquoi Section -->
+        <SellingPointSection />
+
     <!-- CTA Section -->
     <!-- <CTASection /> -->
     
@@ -37,6 +41,7 @@ import TestimonialsSection from '../components/TestimonialsSection.vue'
 import FAQSection from '../components/FAQSection.vue'
 import CTASection from '../components/CTASection.vue'
 import Footer from '../components/Footer.vue'
+import SellingPointSection from '../components/SellingPointSection.vue'
 
 const route = useRoute()
 
