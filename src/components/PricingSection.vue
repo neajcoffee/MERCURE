@@ -272,7 +272,7 @@ export default {
   padding: var(--spacing-md);
   border-radius: var(--radius-lg);
   margin: auto;
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-xxl);
   box-shadow: 0px 0px 0px var(--spacing-xs) #ffffff1f;
 }
 

@@ -110,10 +110,8 @@
           <!-- From Uiverse.io by MuhammadHasann -->
 
 
-          <router-link>
             <BtnStar @click="scrollToPricing">Commencer aujourd'hui</BtnStar>
-            <!-- <span class="btn-arrow">→</span> -->
-          </router-link>
+
           <!-- <button class="hero-btn hero-btn--secondary" @click="playDemo">
             <span class="play-icon">▶</span>
             Voir la démo
@@ -124,19 +122,19 @@
       <div class="hero-stats">
         <div class="stat-item">
           <div class="stat-number" :class="{ 'blur-active': isAnimating }" :style="blurStyle">{{ animatedStats.clients
-            }}/5</div>
+          }}/5</div>
           <div class="stat-label">NOTE MOYENNE</div>
           <Activity class="hero-icon" />
         </div>
         <div class="stat-item">
           <div class="stat-number" :class="{ 'blur-active': isAnimating }" :style="blurStyle">{{ animatedStats.features
-            }} K+</div>
+          }} K+</div>
           <div class="stat-label">CLIENTS SATISFAITS</div>
           <Activity class="hero-icon" />
         </div>
         <div class="stat-item">
           <div class="stat-number" :class="{ 'blur-active': isAnimating }" :style="blurStyle">{{ animatedStats.support
-            }} %</div>
+          }} %</div>
           <div class="stat-label">TAUX DE RETENTION</div>
           <Activity class="hero-icon" />
         </div>
@@ -340,7 +338,7 @@ export default {
   backdrop-filter: blur(1px);
   background-color: #ffffff0a;
   /* border: solid 1px var(--landing-color-accent); */
-  border: solid #ffffff08 1px;
+  /* border: solid #ffffff08 1px; */
   box-shadow: var(--shadow-soft), 0px 1px 2px 0px #00000029;
   padding: var(--spacing-xs);
   padding-right: var(--spacing-md);

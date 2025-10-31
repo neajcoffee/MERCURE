@@ -16,9 +16,24 @@
           <div class="feature-icon">
             <span class="icon">{{ feature.icon }}</span>
           </div>
+          <div class="feature-media" v-if="feature.videoUrl">
+            <video
+              ref="featureVideo"
+              class="feature-video"
+              muted
+              loop
+              preload="none"
+              playsinline
+              :poster="feature.videoPoster || null"
+              aria-hidden="true"
+            >
+              <source :src="feature.videoUrl" :type="feature.videoType || 'video/mp4'" />
+              Votre navigateur ne supporte pas la lecture de cette vidéo.
+            </video>
+          </div>
           <h3 class="feature-title">{{ feature.title }}</h3>
           <p class="feature-description">{{ feature.description }}</p>
-          <ul class="feature-list">
+          <ul class="feature-list" v-if="feature.benefits && feature.benefits.length">
             <li v-for="benefit in feature.benefits" :key="benefit">{{ benefit }}</li>
           </ul>
         </div>
@@ -38,6 +53,9 @@ export default {
           icon: '',
           title: 'Conçu pour Convertir',
           description: 'Une boutique élégante et performante avec des boosters de confiance et d\'engagement intégrés. Aucun code requis.',
+          videoUrl: '/video-features-1.mp4',
+          videoPoster: null,
+          videoType: 'video/mp4',
           // benefits: [
           //   'Automatisation intelligente',
           //   'Suggestions contextuelles',
@@ -49,6 +67,9 @@ export default {
           icon: '',
           title: 'Fonctionnalités de Panier Intégrées',
           description: 'Augmenter la valeur de chaque commande - sans applications supplémentaires.',
+          videoUrl: '/video-features-2.mp4',
+          videoPoster: null,
+          videoType: 'video/mp4',
           benefits: [
             'compte-à-rebours',
             'ventes additionnelles',
@@ -60,13 +81,96 @@ export default {
           icon: '',
           title: 'Multipliez Chaque Vente',
           description: 'Augmentez les ventes avec des lots en un clic et des remises sur quantité - aucun plugin supplémentaire requis.',
+          videoUrl: '/video-features-3.mp4',
+          videoPoster: null,
+          videoType: 'video/mp4',
           // benefits: [
           //   'Partage en temps réel',
           //   'Gestion des permissions',
           //   'Communication intégrée'
           // ]
         },
-      ]
+      ],
+      observer: null
+    }
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.initializeFeatureVideos()
+    })
+  },
+  beforeUnmount() {
+    this.cleanupObserver()
+  },
+  // Vue 2 fallback
+  beforeDestroy() {
+    this.cleanupObserver()
+  },
+  methods: {
+    initializeFeatureVideos() {
+      const videos = this.getVideoElements()
+
+      if (!videos.length) {
+        return
+      }
+
+      videos.forEach((video) => {
+        video.muted = true
+        video.loop = true
+        video.playsInline = true
+        video.setAttribute('muted', '')
+        video.setAttribute('loop', '')
+        video.setAttribute('playsinline', '')
+      })
+
+      if (typeof window === 'undefined') {
+        videos.forEach((video) => {
+          video.play().catch(() => {})
+        })
+        return
+      }
+
+      this.cleanupObserver()
+
+      if ('IntersectionObserver' in window) {
+        this.observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              const video = entry.target
+
+              if (entry.isIntersecting) {
+                video.play().catch(() => {})
+              } else {
+                video.pause()
+                video.currentTime = 0
+              }
+            })
+          },
+          {
+            threshold: 0.5
+          }
+        )
+
+        videos.forEach((video) => {
+          this.observer.observe(video)
+        })
+      } else {
+        videos.forEach((video) => {
+          video.play().catch(() => {})
+        })
+      }
+    },
+    getVideoElements() {
+      const refs = this.$refs.featureVideo || []
+      const list = Array.isArray(refs) ? refs : [refs]
+
+      return list.filter(Boolean)
+    },
+    cleanupObserver() {
+      if (this.observer) {
+        this.observer.disconnect()
+        this.observer = null
+      }
     }
   }
 }
@@ -83,7 +187,12 @@ export default {
   margin: 0 auto;
   padding-top: var(--spacing-xxl);
   border-radius: var(--radius-xxl);
-  background: linear-gradient(180deg, #ffffff05 0%, transparent 30%);
+  /* background: linear-gradient(180deg, #ffffff05 0%, transparent 30%); */
+  background: white
+}
+
+.landing-section-title {
+  color: var(--landing-color-text);
 }
 
 .features-subtitle {
@@ -100,11 +209,9 @@ export default {
   padding: var(--spacing-md);
   border-radius: var(--radius-xl);
   background: #f8f9fa;
-  border-radius: var(--radius-xxl);
   margin: auto;
-
-
-
+  /* border-radius: var(--radius-xxl); */
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
 }
 
 .feature-card {
@@ -115,10 +222,10 @@ export default {
   transition: all 0.3s ease;
 }
 
-.feature-card:hover {
+/* .feature-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
+} */
 
 .feature-icon {
   width: 80px;
@@ -131,6 +238,20 @@ export default {
   margin: auto;
   margin-bottom: var(--spacing-lg);
   display: none;
+}
+
+.feature-media {
+  margin-bottom: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.feature-video {
+  width: 100%;
+  display: block;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
 
 .icon {
