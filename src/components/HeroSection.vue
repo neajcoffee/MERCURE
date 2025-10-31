@@ -69,7 +69,7 @@
     </div>
 
     <div class="hero-container">
-      <div class="hero-content">
+      <div :class="['hero-content', { 'hero-content--visible': isLoaded }]">
         <!-- <div class="hero-badge">
           <span class="badge-icon">✨</span>
           <span class="badge-text">Nouveau : IA intégrée</span>
@@ -119,7 +119,7 @@
         </div>
       </div>
 
-      <div class="hero-stats">
+      <!-- <div class="hero-stats">
         <div class="stat-item">
           <div class="stat-number" :class="{ 'blur-active': isAnimating }" :style="blurStyle">{{ animatedStats.clients
           }}/5</div>
@@ -138,6 +138,23 @@
           <div class="stat-label">TAUX DE RETENTION</div>
           <Activity class="hero-icon" />
         </div>
+      </div> -->
+      <div :class="['hero-stats', { 'hero-stats--visible': isLoaded }]">
+        <div class="stat-item">
+          <div class="stat-number">4.9/5</div>
+          <div class="stat-label">NOTE MOYENNE</div>
+          <Activity class="hero-icon" />
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">20 K+</div>
+          <div class="stat-label">CLIENTS SATISFAITS</div>
+          <Activity class="hero-icon" />
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">98 %</div>
+        <div class="stat-label">TAUX DE RETENTION</div>
+        <Activity class="hero-icon" />
+      </div>
       </div>
 
       <!-- <div class="hero-visual">
@@ -187,6 +204,7 @@ export default {
   },
   data() {
     return {
+      isLoaded: false,
 
       animatedStats: {
         clients: 0,
@@ -216,6 +234,13 @@ export default {
   },
   mounted() {
     this.animateStats()
+    if (typeof window !== 'undefined' && window.requestAnimationFrame) {
+      window.requestAnimationFrame(() => {
+        this.isLoaded = true
+      })
+    } else {
+      this.isLoaded = true
+    }
   },
   methods: {
     animateStats() {
@@ -326,6 +351,14 @@ export default {
   padding-bottom: var(--spacing-xs);
   /* border: dashed 2px var(--landing-color-primary); */
   /* border-radius: var(--radius-md); */
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hero-content--visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .hero-badge {
@@ -436,6 +469,14 @@ export default {
   padding: var(--spacing-sm);
   /* border: dashed 2px #0000000a; */
   border-radius: var(--radius-xl);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.hero-stats--visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .stat-item {
@@ -448,10 +489,30 @@ export default {
   padding: var(--spacing-lg);
   flex-direction: column-reverse;
   align-items: center;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.2s ease-out;
 }
 
 .stat-item:hover {
   transform: scale(1.04);
+}
+
+.hero-stats--visible .stat-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-stats--visible .stat-item:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.hero-stats--visible .stat-item:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.hero-stats--visible .stat-item:nth-child(3) {
+  transition-delay: 0.3s;
 }
 
 .stat-number {
