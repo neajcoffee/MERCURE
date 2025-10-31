@@ -272,7 +272,7 @@ export default {
   top: -12px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--e9596db7-themeColor);
+  background: v-bind(themeColor);
   /* color: white; */
   padding: var(--spacing-xs) var(--spacing-md);
   border-radius: var(--radius-md);
