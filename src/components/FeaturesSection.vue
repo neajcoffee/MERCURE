@@ -25,7 +25,7 @@
               preload="auto"
               playsinline
               autoplay
-              :poster="feature.videoPoster || null"
+              :poster="feature.videoPoster || defaultVideoPoster"
               aria-hidden="true"
             >
               <source :src="feature.videoUrl" :type="feature.videoType || 'video/mp4'" />
@@ -92,7 +92,9 @@ export default {
           // ]
         },
       ],
-      observer: null
+      observer: null,
+      defaultVideoPoster:
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP4DwQACfsD/QduCMIAAAAASUVORK5CYII='
     }
   },
   mounted() {
