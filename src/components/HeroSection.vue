@@ -217,7 +217,8 @@ export default {
         support: 98
       },
       isAnimating: true,
-      animationProgress: 0
+      animationProgress: 0,
+      statsTimer: null
     }
   },
   computed: {
@@ -233,22 +234,66 @@ export default {
     }
   },
   mounted() {
-    this.animateStats()
-    if (typeof window !== 'undefined' && window.requestAnimationFrame) {
-      window.requestAnimationFrame(() => {
-        this.isLoaded = true
-      })
-    } else {
-      this.isLoaded = true
-    }
+    this.prepareHero()
+  },
+  beforeUnmount() {
+    this.clearStatsTimer()
+  },
+  // Vue 2 fallback
+  beforeDestroy() {
+    this.clearStatsTimer()
   },
   methods: {
+    async prepareHero() {
+      try {
+        await this.waitForFonts()
+      } catch (error) {
+        // Ignorer les erreurs de chargement des polices et poursuivre l'animation
+      }
+
+      const triggerAnimations = () => {
+        this.isLoaded = true
+        const schedule = typeof window !== 'undefined' && window.setTimeout ? window.setTimeout : setTimeout
+        schedule(() => {
+          this.animateStats()
+        }, 250)
+      }
+
+      if (typeof window !== 'undefined' && window.requestAnimationFrame) {
+        window.requestAnimationFrame(triggerAnimations)
+      } else {
+        triggerAnimations()
+      }
+    },
+    waitForFonts() {
+      if (typeof document === 'undefined' || !document.fonts || !document.fonts.load) {
+        return Promise.resolve()
+      }
+
+      const fontPromises = [
+        document.fonts.load('400 1em "Inter"'),
+        document.fonts.load('700 1em "Inter"'),
+        document.fonts.load('700 1em "League Spartan"'),
+        document.fonts.load('700 1em "Passion One"'),
+        document.fonts.ready
+      ]
+
+      const timeout = new Promise((resolve) => setTimeout(resolve, 2000))
+
+      return Promise.race([
+        Promise.all(fontPromises).catch(() => {}),
+        timeout
+      ])
+    },
     animateStats() {
-      const duration = 1000 // 2 secondes
-      const steps = 100
+      const duration = 1400
+      const steps = 70
       const stepDuration = duration / steps
 
+      this.clearStatsTimer()
+
       let currentStep = 0
+      this.isAnimating = true
 
       const timer = setInterval(() => {
         currentStep++
@@ -260,7 +305,7 @@ export default {
         this.animatedStats.support = Math.floor((this.finalStats.support * currentStep) / steps)
 
         if (currentStep >= steps) {
-          clearInterval(timer)
+          this.clearStatsTimer()
           // Assurer que les valeurs finales sont exactes
           this.animatedStats.clients = this.finalStats.clients
           this.animatedStats.features = this.finalStats.features
@@ -269,6 +314,14 @@ export default {
           this.animationProgress = 1
         }
       }, stepDuration)
+
+      this.statsTimer = timer
+    },
+    clearStatsTimer() {
+      if (this.statsTimer) {
+        clearInterval(this.statsTimer)
+        this.statsTimer = null
+      }
     },
     playDemo() {
       // Logique pour lancer la démo
@@ -354,11 +407,45 @@ export default {
   opacity: 0;
   transform: translateY(32px);
   transition: opacity 0.6s ease, transform 0.6s ease;
+  transition-delay: 0.15s;
 }
 
 .hero-content--visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.hero-badge,
+.hero-title,
+.hero-description,
+.hero-actions {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hero-content--visible .hero-badge {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.hero-content--visible .hero-title {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.35s;
+}
+
+.hero-content--visible .hero-description {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s;
+}
+
+.hero-content--visible .hero-actions {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.65s;
 }
 
 .hero-badge {
@@ -472,6 +559,7 @@ export default {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.7s ease, transform 0.7s ease;
+  transition-delay: 0.55s;
 }
 
 .hero-stats--visible {
@@ -504,15 +592,15 @@ export default {
 }
 
 .hero-stats--visible .stat-item:nth-child(1) {
-  transition-delay: 0.1s;
+  transition-delay: 0.75s;
 }
 
 .hero-stats--visible .stat-item:nth-child(2) {
-  transition-delay: 0.2s;
+  transition-delay: 0.9s;
 }
 
 .hero-stats--visible .stat-item:nth-child(3) {
-  transition-delay: 0.3s;
+  transition-delay: 1.05s;
 }
 
 .stat-number {
