@@ -35,15 +35,6 @@ body {
   background: var(--background-color);
 }
 
-html.fonts-loading body {
-  opacity: 0;
-}
-
-html.fonts-loaded body {
-  opacity: 1;
-  transition: opacity 0.25s ease-in;
-}
-
 /* Classes de layout pour l'application */
 .app-container {
   display: flex;

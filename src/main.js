@@ -6,37 +6,6 @@ import store from './store'
 // Import des styles globaux
 import './assets/styles/main.css'
 
-if (typeof document !== 'undefined') {
-  const markFontsReady = () => {
-    const root = document.documentElement
-
-    if (!root.classList.contains('fonts-loaded')) {
-      root.classList.remove('fonts-loading')
-      root.classList.add('fonts-loaded')
-    }
-  }
-
-  if (document.fonts && document.fonts.load) {
-    const fontPromises = [
-      document.fonts.load('400 1em "Inter"'),
-      document.fonts.load('700 1em "Inter"'),
-      document.fonts.load('400 1em "League Spartan"'),
-      document.fonts.load('700 1em "Passion One"')
-    ]
-
-    const timeoutId = window.setTimeout(markFontsReady, 3000)
-
-    Promise.all(fontPromises)
-      .catch(() => {})
-      .finally(() => {
-        window.clearTimeout(timeoutId)
-        markFontsReady()
-      })
-  } else {
-    markFontsReady()
-  }
-}
-
 // Import des icônes Lucide
 import { 
   Home, 

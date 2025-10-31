@@ -506,7 +506,7 @@ export default {
 .marquee-banner {
   display: none;
   z-index: 9000;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: -5vw;
   right: -5vh;
