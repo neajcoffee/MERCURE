@@ -1070,18 +1070,18 @@ export default {
 
   .bg-star.pos-1 {
     top: 26%;
-    left: 22%;
+    left: 15%;
   }
 
   .bg-star.pos-3 {
     bottom: 40%;
-    left: 26%;
+    left: 22%;
     width: 12px;
   }
 
   .bg-star.pos-6 {
-    top: 57%;
-    right: 15%;
+    top: 65%;
+    right: 5%;
     width: 11px;
   }
 
